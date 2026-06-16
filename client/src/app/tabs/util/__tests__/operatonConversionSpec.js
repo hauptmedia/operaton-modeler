@@ -1,3 +1,10 @@
+/**
+ * Copyright 2025 FINOS.
+ * Copyright 2026 the Operaton contributors.
+ *
+ * Licensed under the MIT license. See the LICENSE file in the project root.
+ */
+
 /* global sinon */
 
 import {

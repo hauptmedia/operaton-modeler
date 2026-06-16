@@ -1,3 +1,9 @@
+/**
+ * Copyright 2026 the Operaton contributors.
+ *
+ * Licensed under the MIT license. See the LICENSE file in the project root.
+ */
+
 export default function createOperatonModdleDescriptor(camundaDescriptor, uri) {
 
   // Keep the Camunda package name/prefix because upstream platform modules

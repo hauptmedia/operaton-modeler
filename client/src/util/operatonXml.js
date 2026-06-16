@@ -1,3 +1,9 @@
+/**
+ * Copyright 2026 the Operaton contributors.
+ *
+ * Licensed under the MIT license. See the LICENSE file in the project root.
+ */
+
 const NAMESPACES = {
   bpmn: {
     camunda: 'http://camunda.org/schema/1.0/bpmn',

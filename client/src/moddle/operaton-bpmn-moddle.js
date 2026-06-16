@@ -1,3 +1,9 @@
+/**
+ * Copyright 2026 the Operaton contributors.
+ *
+ * Licensed under the MIT license. See the LICENSE file in the project root.
+ */
+
 import camundaDescriptor from 'camunda-bpmn-moddle/resources/camunda';
 
 import createOperatonModdleDescriptor from './createOperatonModdleDescriptor';

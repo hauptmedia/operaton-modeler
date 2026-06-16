@@ -1,3 +1,10 @@
+/**
+ * Copyright 2025 FINOS.
+ * Copyright 2026 the Operaton contributors.
+ *
+ * Licensed under the MIT license. See the LICENSE file in the project root.
+ */
+
 import { getBpmnDefinitionsForConversion, getDmnDefinitionsForConversion } from '../../../util/xmlConversion';
 import { is } from './namespace';
 import Metadata from '../../../util/Metadata';

@@ -47,6 +47,7 @@ Please checkout our [contributing guidelines](./CONTRIBUTING.md) if you plan to 
 ## License
 
 Copyright 2025 FINOS
+Copyright 2026 the Operaton contributors.
 
 MIT
 
