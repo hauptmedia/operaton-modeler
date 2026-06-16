@@ -73,6 +73,8 @@ import * as css from './App.less';
 import Notifications, { NOTIFICATION_TYPES } from './notifications';
 import { RecentTabs } from './RecentTabs';
 import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda';
+import OperatonBpmnModdle from '../moddle/operaton-bpmn-moddle';
+import { usesOperatonExtensionNamespace } from '../util/operatonXml';
 
 const log = debug('App');
 
@@ -949,7 +951,11 @@ export class App extends PureComponent {
 
     if (isString(contents) && tab.type === 'bpmn') {
       const moddle = new BpmnModdle(
-        { camunda: CamundaBpmnModdle }
+        {
+          camunda: usesOperatonExtensionNamespace(contents, 'bpmn') ?
+            OperatonBpmnModdle :
+            CamundaBpmnModdle
+        }
       );
       const { rootElement } = await moddle.fromXML(contents);
       contents = rootElement;

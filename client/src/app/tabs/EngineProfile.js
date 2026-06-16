@@ -29,7 +29,7 @@ import { Fill } from '../slot-fill';
 import { ENGINES, ENGINE_LABELS, ENGINE_PROFILES, getLatestStable } from '../../util/Engines';
 
 const HELP_LINKS = {
-  [ ENGINES.OPERATON ]: 'https://docs.operaton.org/',
+  [ ENGINES.OPERATON ]: 'https://docs.operaton.org/docs/documentation/',
   [ ENGINES.CLOUD ]: 'https://docs.camunda.io/?utm_source=modeler&utm_medium=referral'
 };
 

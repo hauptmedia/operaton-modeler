@@ -52,7 +52,6 @@ const resolver = new Resolver();
 
 const rules = {
   "custom/no-manual-task": "warn",
-  "custom/rule-error": "error",
   "custom/awesome-send-task": "info"
 };
 

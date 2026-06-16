@@ -714,7 +714,7 @@
     "appliesTo": [
       "bpmn:ServiceTask"
     ],
-    "documentationRef": "https://docs.camunda.io/docs/components/modeler/desktop-modeler/element-templates/",
+    "documentationRef": "https://docs.camunda.io/docs/components/modeler/desktop-modeler/element-templates/configuring-templates/",
     "properties": [
       {
         "type": "Hidden",

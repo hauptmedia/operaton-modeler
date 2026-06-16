@@ -45,7 +45,7 @@ export function ReleaseInfo(props) {
       <ul className="dashed">
         <li>
           <h4>Initial Release</h4>
-          Welcome to the initial release. <a href={ 'https://docs.operaton.org/get-started/quick-start' }>Learn More.</a>
+          Welcome to the initial release. <a href={ 'https://docs.operaton.org/docs/get-started/quick-start/' }>Learn More.</a>
         </li>
         <li>
           <h4>Bug fixes and more</h4>

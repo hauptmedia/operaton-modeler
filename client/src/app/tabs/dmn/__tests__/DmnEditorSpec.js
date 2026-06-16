@@ -2165,10 +2165,12 @@ describe('<DmnEditor>', function() {
         expect(convertedXML).to.contain('namespace="http://operaton.org/schema/1.0/dmn"');
         expect(convertedXML).to.contain('modeler:executionPlatform="Operaton"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
+        expect(convertedXML).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/dmn"');
+        expect(convertedXML).to.contain('operaton:historyTimeToLive="20000"');
 
         expect(convertedXML).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
         expect(convertedXML).not.to.contain('modeler:executionPlatform="Camunda Platform"');
-        expect(convertedXML).to.contain('xmlns:camunda="http://camunda.org/schema/1.0/dmn"');
+        expect(convertedXML).not.to.contain('camunda:');
 
       });
     });

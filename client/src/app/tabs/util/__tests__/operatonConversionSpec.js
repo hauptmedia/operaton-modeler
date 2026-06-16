@@ -11,8 +11,8 @@ describe('tabs/bpmn/util - operatonConversion', function() {
 
   const camundaNsBpmn = `
     <?xml version="1.0" encoding="UTF-8"?>
-    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" exporter="Camunda Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="1.0.0">
-      <bpmn:process id="Process_10ga7ii" isExecutable="true" >
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" exporter="Camunda Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="1.0.0">
+      <bpmn:process id="Process_10ga7ii" isExecutable="true" camunda:historyTimeToLive="30">
         <bpmn:startEvent id="StartEvent_1" />
       </bpmn:process>
       <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -57,10 +57,49 @@ describe('tabs/bpmn/util - operatonConversion', function() {
     </bpmn:definitions>
   `;
 
+  const operatonBpmnWithCamundaExtensions = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:operaton="http://operaton.org/schema/1.0/bpmn" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Operaton Modeler" exporterVersion="5.33.0-dev" xmlns:modeler="http://operaton.org/schema/modeler/1.0" modeler:executionPlatform="Operaton" modeler:executionPlatformVersion="1.0.0">
+        <bpmn:process id="Process_10ga7ii" isExecutable="true" camunda:historyTimeToLive="30">
+        <bpmn:startEvent id="StartEvent_1" />
+        </bpmn:process>
+      <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_10ga7ii">
+          <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+            <dc:Bounds x="182" y="162" width="36" height="36" />
+          </bpmndi:BPMNShape>
+        </bpmndi:BPMNPlane>
+      </bpmndi:BPMNDiagram>
+    </bpmn:definitions>
+  `;
+
   const camundaDmn = `
     <?xml version="1.0" encoding="UTF-8"?>
-    <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_1x2v1az" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" exporter="Camunda Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="1.0.0">
-      <decision id="Decision_0lhr2pc" name="Decision 1">
+    <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_1x2v1az" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="1.0.0">
+      <decision id="Decision_0lhr2pc" name="Decision 1" camunda:historyTimeToLive="30">
+        <decisionTable id="DecisionTable_0ym4gfa">
+          <input id="Input_1">
+            <inputExpression id="InputExpression_1" typeRef="string">
+              <text></text>
+            </inputExpression>
+          </input>
+          <output id="Output_1" typeRef="string" />
+        </decisionTable>
+      </decision>
+      <dmndi:DMNDI>
+        <dmndi:DMNDiagram>
+          <dmndi:DMNShape dmnElementRef="Decision_0lhr2pc">
+            <dc:Bounds height="80" width="180" x="160" y="100" />
+          </dmndi:DMNShape>
+        </dmndi:DMNDiagram>
+      </dmndi:DMNDI>
+    </definitions>
+  `;
+
+  const operatonDmnWithCamundaExtensions = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_1x2v1az" name="DRD" namespace="http://operaton.org/schema/1.0/dmn" xmlns:modeler="http://operaton.org/schema/modeler/1.0" exporter="Operaton Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Operaton" modeler:executionPlatformVersion="1.0.0">
+      <decision id="Decision_0lhr2pc" name="Decision 1" camunda:historyTimeToLive="30">
         <decisionTable id="DecisionTable_0ym4gfa">
           <input id="Input_1">
             <inputExpression id="InputExpression_1" typeRef="string">
@@ -142,8 +181,10 @@ describe('tabs/bpmn/util - operatonConversion', function() {
         expect(conversion).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/bpmn"');
         expect(conversion).to.contain('modeler:executionPlatform="Operaton"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
+        expect(conversion).to.contain('operaton:historyTimeToLive="30"');
 
         expect(conversion).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
+        expect(conversion).not.to.contain('camunda:');
         expect(conversion).not.to.contain('modeler:executionPlatform="Camunda Platform"');
 
         expect(onAction).not.to.have.been.calledWith('close-tab');
@@ -158,10 +199,13 @@ describe('tabs/bpmn/util - operatonConversion', function() {
         expect(onAction).to.have.been.calledWith('show-dialog');
 
         expect(conversion).to.contain('namespace="http://operaton.org/schema/1.0/dmn"');
+        expect(conversion).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/dmn"');
         expect(conversion).to.contain('modeler:executionPlatform="Operaton"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
+        expect(conversion).to.contain('operaton:historyTimeToLive="30"');
 
         expect(conversion).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
+        expect(conversion).not.to.contain('camunda:');
         expect(conversion).not.to.contain('modeler:executionPlatform="Camunda Platform"');
 
         expect(onAction).not.to.have.been.calledWith('close-tab');
@@ -236,6 +280,33 @@ describe('tabs/bpmn/util - operatonConversion', function() {
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
         expect(onContentChanged).not.to.have.been.called;
+
+      });
+
+      it('when operaton bpmn contains camunda extension prefixes', async function() {
+
+        let onContentChanged = spy();
+
+        const conversion = await convertBpmnToOperatonIfRequired(operatonBpmnWithCamundaExtensions, onAction, onContentChanged);
+
+        expect(onAction).not.to.have.been.calledWith('show-dialog');
+        expect(onContentChanged).to.have.been.calledOnce;
+        expect(conversion).to.contain('operaton:historyTimeToLive="30"');
+        expect(conversion).not.to.contain('camunda:');
+
+      });
+
+      it('when operaton dmn contains camunda extension prefixes', async function() {
+
+        let onContentChanged = spy();
+
+        const conversion = await convertDmnToOperatonIfRequired(operatonDmnWithCamundaExtensions, onAction, onContentChanged);
+
+        expect(onAction).not.to.have.been.calledWith('show-dialog');
+        expect(onContentChanged).to.have.been.calledOnce;
+        expect(conversion).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/dmn"');
+        expect(conversion).to.contain('operaton:historyTimeToLive="30"');
+        expect(conversion).not.to.contain('camunda:');
 
       });
 

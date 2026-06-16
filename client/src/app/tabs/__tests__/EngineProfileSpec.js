@@ -452,7 +452,7 @@ function expectCloudHelp(getByRole) {
 }
 
 function expectPlatformHelp(getByRole) {
-  expectHelpText(getByRole, 'https://docs.operaton.org/');
+  expectHelpText(getByRole, 'https://docs.operaton.org/docs/documentation/');
 }
 
 function selectVersion(select, version) {

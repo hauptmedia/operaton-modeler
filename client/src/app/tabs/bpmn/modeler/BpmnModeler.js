@@ -30,6 +30,8 @@ import paletteTracking from 'bpmn-js-tracking/lib/features/palette';
 
 import { BpmnImprovedCanvasModule } from './features/improved-canvas';
 
+import operatonBpmnModdle from '../../../../moddle/operaton-bpmn-moddle';
+
 import Flags, {
   DISABLE_ADJUST_ORIGIN,
   ENABLE_NEW_CONTEXT_PAD
@@ -60,7 +62,10 @@ export default class PlatformBpmnModeler extends BpmnModeler {
     super({
       ...otherOptions,
       additionalModules,
-      moddleExtensions,
+      moddleExtensions: {
+        ...moddleExtensions,
+        camunda: operatonBpmnModdle
+      },
       disableAdjustOrigin: Flags.get(DISABLE_ADJUST_ORIGIN),
       canvas: {
         autoFocus: true

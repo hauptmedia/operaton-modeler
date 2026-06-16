@@ -70,6 +70,7 @@ import { ENGINES } from '../../../util/Engines';
 import {
   convertDmnToOperatonIfRequired
 } from '../util/operatonConversion';
+import { normalizeOperatonXml } from '../../../util/operatonXml';
 
 const EXPORT_AS = [ 'png', 'jpeg', 'svg' ];
 
@@ -797,7 +798,8 @@ export class DmnEditor extends CachedComponent {
     }
 
     try {
-      const { xml } = await modeler.saveXML({ format: true });
+      const result = await modeler.saveXML({ format: true });
+      const xml = normalizeOperatonXml(result.xml, 'dmn');
 
       const stackIdx = modeler.getStackIdx();
 

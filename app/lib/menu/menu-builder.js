@@ -588,7 +588,7 @@ class MenuBuilder {
     const topPart = [
       {
         label: 'Documentation',
-        click: () => browserOpen('https://docs.operaton.org/modeler/')
+        click: () => browserOpen('https://docs.operaton.org/docs/documentation/modeling-bpmn/')
       },
       {
         label: 'Keyboard Shortcuts',

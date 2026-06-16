@@ -86,7 +86,7 @@ export default class EmptyTab extends PureComponent {
           <h3>Learn more</h3>
           <div className="article relative">
             <p>Introduction to Operaton</p>
-            <a href="https://docs.operaton.org/get-started/quick-start">Getting Started</a>
+            <a href="https://docs.operaton.org/docs/get-started/quick-start/">Getting Started</a>
           </div>
           <div className="article">
             <p>About Modeler 1</p>
@@ -114,4 +114,3 @@ export default class EmptyTab extends PureComponent {
     );
   }
 }
-

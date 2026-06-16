@@ -63,18 +63,18 @@ import { getDefaultVersion } from './tabs/EngineProfile';
 const BPMN_HELP_MENU = [
   {
     label: 'BPMN 2.0 Tutorial',
-    action: 'https://docs.operaton.org/modeler/bpmn'
+    action: 'https://docs.operaton.org/docs/get-started/quick-start/'
   },
   {
     label: 'BPMN Modeling Reference',
-    action: 'https://docs.operaton.org/reference/bpmn20'
+    action: 'https://docs.operaton.org/docs/documentation/reference/bpmn20/'
   }
 ];
 
 const DMN_HELP_MENU = [
   {
     label: 'DMN Tutorial',
-    action: 'https://docs.operaton.org/modeler/dmn'
+    action: 'https://docs.operaton.org/docs/get-started/dmn/'
   }
 ];
 

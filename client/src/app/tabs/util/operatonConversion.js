@@ -5,6 +5,7 @@ import { toBpmnXml, toDmnXml } from '../../../util/xmlConversion';
 import { ENGINES, getLatestStable } from '../../../util/Engines';
 import { Type } from './type';
 import { XMLValidator } from 'fast-xml-parser';
+import { normalizeOperatonXml } from '../../../util/operatonXml';
 
 const NAMESPACE_URI_BPMN_OPERATON = 'http://operaton.org/schema/1.0/bpmn';
 const NAMESPACE_URI_DMN_OPERATON = 'http://operaton.org/schema/1.0/dmn';
@@ -16,13 +17,13 @@ const EXECUTION_PLATFORM_C8 = 'Camunda Cloud';
 export async function convertBpmnToOperatonIfRequired(contents, onAction, onContentUpdated) {
   const entity = await convertToOperatonIfRequired(contents, Type.BPMN, onAction);
   const result = getConvertedResult(entity, onContentUpdated);
-  return result || contents;
+  return result || normalizeExistingOperatonXml(contents, Type.BPMN, onContentUpdated);
 }
 
 export async function convertDmnToOperatonIfRequired(contents, onAction, onContentUpdated) {
   const entity = await convertToOperatonIfRequired(contents, Type.DMN, onAction);
   const result = getConvertedResult(entity, onContentUpdated);
-  return result || contents;
+  return result || normalizeExistingOperatonXml(contents, Type.DMN, onContentUpdated);
 }
 
 export async function convertFormToOperatonIfRequired(contents, onAction) {
@@ -126,7 +127,9 @@ async function handleConversionForXml(contents, type, latestStable) {
       const updatedDefinitions = updateCommonAttributesForXml(definitions, latestStable);
       convertedXml = await toDmnXml(updatedDefinitions);
     }
-    return convertedXml.xml;
+    return normalizeOperatonXml(convertedXml.xml, type, {
+      ensureNamespace: true
+    });
   } catch (error) {
     throw new Error('Error converting model to Operaton');
   }
@@ -155,6 +158,24 @@ function updateCommonAttributes(definitions, latestStable) {
   definitions.executionPlatform = ENGINES.OPERATON;
   definitions.executionPlatformVersion = latestStable;
   return definitions;
+}
+
+function normalizeExistingOperatonXml(contents, type, onContentUpdated) {
+  if (!is(contents, getOperatonNamespace(type), EXECUTION_PLATFORM_OPERATON)) {
+    return contents;
+  }
+
+  const normalized = normalizeOperatonXml(contents, type);
+
+  if (normalized !== contents && onContentUpdated) {
+    onContentUpdated(normalized);
+  }
+
+  return normalized;
+}
+
+function getOperatonNamespace(type) {
+  return type === Type.BPMN ? NAMESPACE_URI_BPMN_OPERATON : NAMESPACE_URI_DMN_OPERATON;
 }
 
 function isEntityValid(contents, type) {

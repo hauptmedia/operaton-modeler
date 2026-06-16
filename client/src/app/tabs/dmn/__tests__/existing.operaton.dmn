@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="definitions_0pm5f1p" name="Decision" namespace="http://operaton.org/schema/1.0/dmn" modeler:executionPlatform="Operaton">
-  <decision id="Decision_13nychf" name="Which Season" camunda:historyTimeToLive="20000">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:operaton="http://operaton.org/schema/1.0/dmn" id="definitions_0pm5f1p" name="Decision" namespace="http://operaton.org/schema/1.0/dmn" modeler:executionPlatform="Operaton">
+  <decision id="Decision_13nychf" name="Which Season" operaton:historyTimeToLive="20000">
     <informationRequirement id="InformationRequirement_14co6no">
       <requiredInput href="#InputData_1srou0x" />
     </informationRequirement>

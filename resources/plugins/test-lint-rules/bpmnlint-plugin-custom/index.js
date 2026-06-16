@@ -12,8 +12,7 @@ module.exports = {
   configs: {
     recommended: {
       rules: {
-        'no-manual-task': 'error',
-        'rule-error': 'error'
+        'no-manual-task': 'error'
       }
     }
   }

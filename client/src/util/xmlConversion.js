@@ -17,10 +17,13 @@ import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda';
 import CamundaDmnModdle from 'camunda-dmn-moddle/resources/camunda';
 import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe';
 import OperatonModelerModdle from '../moddle/operaton-bpmn-modeler-moddle';
+import OperatonBpmnModdle from '../moddle/operaton-bpmn-moddle';
+import OperatonDmnModdle from '../moddle/operaton-dmn-moddle';
 
 import { selfAndAllFlowElements } from './elementsUtil';
 import parseExecutionPlatform from '../app/util/parseExecutionPlatform';
 import { ENGINES } from './Engines';
+import { usesOperatonExtensionNamespace } from './operatonXml';
 
 export async function getBpmnDefinitionsForConversion(xml) {
   return await getBpmnDefinitions(xml, 'bpmn', null);
@@ -28,7 +31,7 @@ export async function getBpmnDefinitionsForConversion(xml) {
 
 export async function getDmnDefinitionsForConversion(xml) {
   const extensions = {
-    camunda: CamundaDmnModdle
+    camunda: getDmnModdleExtension(xml)
   };
 
   const moddle = new DmnModdle(extensions);
@@ -41,12 +44,14 @@ export async function getDmnDefinitionsForConversion(xml) {
 
 export async function getBpmnDefinitions(xml, diagramType, modelerModdle = OperatonModelerModdle) {
 
-  const extensions = {
-    modeler: modelerModdle
-  };
+  const extensions = {};
+
+  if (modelerModdle) {
+    extensions.modeler = modelerModdle;
+  }
 
   if (diagramType === 'bpmn') {
-    extensions.camunda = CamundaBpmnModdle;
+    extensions.camunda = getBpmnModdleExtension(xml);
   }
 
   if (diagramType === 'cloud-bpmn') {
@@ -162,7 +167,7 @@ export function parseFormFieldCounts(contents) {
 
 export async function toBpmnXml(definitions) {
   const extensions = {
-    camunda: CamundaBpmnModdle
+    camunda: OperatonBpmnModdle
   };
 
   const moddle = new BpmnModdle(extensions);
@@ -171,7 +176,7 @@ export async function toBpmnXml(definitions) {
 
 export async function toDmnXml(definitions) {
   const extensions = {
-    camunda: CamundaDmnModdle
+    camunda: OperatonDmnModdle
   };
 
   const moddle = new DmnModdle(extensions);
@@ -180,6 +185,14 @@ export async function toDmnXml(definitions) {
 
 function getDefaultExecutionPlatform() {
   return ENGINES.OPERATON;
+}
+
+function getBpmnModdleExtension(xml) {
+  return usesOperatonExtensionNamespace(xml, 'bpmn') ? OperatonBpmnModdle : CamundaBpmnModdle;
+}
+
+function getDmnModdleExtension(xml) {
+  return usesOperatonExtensionNamespace(xml, 'dmn') ? OperatonDmnModdle : CamundaDmnModdle;
 }
 
 function parsFormExecutionPlatform(contents) {

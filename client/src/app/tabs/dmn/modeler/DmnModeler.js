@@ -27,6 +27,7 @@ import overviewRendererModule from './features/overview/overview-renderer';
 
 import executionPlatformModule from '@camunda/execution-platform';
 import modelerModdle from '../../../../moddle/operaton-dmn-modeler-moddle.json';
+import operatonDmnModdle from '../../../../moddle/operaton-dmn-moddle';
 
 import { DmnImprovedCanvasModule } from '@camunda/improved-canvas';
 
@@ -98,6 +99,7 @@ export default class CamundaDmnModeler extends DmnModeler {
       ]),
       moddleExtensions: {
         ...moddleExtensions,
+        camunda: operatonDmnModdle,
         modeler: modelerModdle
       },
       canvas: {

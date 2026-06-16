@@ -15,7 +15,7 @@ import { Overlay, Section } from '../../shared/ui';
 import { ReleaseInfo } from './ReleaseInfo';
 
 const RELEASE_NOTES_LINK = 'https://github.com/operaton/operaton-modeler/releases';
-const DOCS_LINK = 'https://docs.operaton.org/modeler/?utm_source=modeler&utm_medium=referral';
+const DOCS_LINK = 'https://docs.operaton.org/docs/documentation/modeling-bpmn/?utm_source=modeler&utm_medium=referral';
 const CHANGELOG_LINK = 'https://github.com/operaton/operaton-modeler/blob/main/CHANGELOG.md';
 
 const OFFSET = { right: 0 };

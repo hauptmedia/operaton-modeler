@@ -253,7 +253,7 @@ describe('TabsProvider', function() {
         const { file: { contents } } = tabsProvider.createTab('bpmn');
 
         // then
-        expect(contents).to.include('modeler:executionPlatformVersion="2.0.0"');
+        expect(contents).to.include('modeler:executionPlatformVersion="2.2.0"');
       });
 
 
@@ -269,7 +269,7 @@ describe('TabsProvider', function() {
         const { file: { contents } } = tabsProvider.createTab('dmn');
 
         // then
-        expect(contents).to.include('modeler:executionPlatformVersion="2.0.0"');
+        expect(contents).to.include('modeler:executionPlatformVersion="2.2.0"');
       });
 
 
@@ -285,7 +285,7 @@ describe('TabsProvider', function() {
         const { file: { contents } } = tabsProvider.createTab('form');
 
         // then
-        expect(contents).to.include('"executionPlatformVersion": "2.0.0"');
+        expect(contents).to.include('"executionPlatformVersion": "2.2.0"');
       });
 
       describe('invalid flag', function() {
@@ -891,7 +891,8 @@ describe('TabsProvider', function() {
       const { file: { contents } } = tabsProvider.createTab('bpmn');
 
       // then
-      expect(contents).to.include('historyTimeToLive="30"');
+      expect(contents).to.include('operaton:historyTimeToLive="30"');
+      expect(contents).not.to.include('camunda:historyTimeToLive');
 
     });
 
@@ -908,7 +909,8 @@ describe('TabsProvider', function() {
       const { file: { contents } } = tabsProvider.createTab('bpmn');
 
       // then
-      expect(contents).to.include('historyTimeToLive="40"');
+      expect(contents).to.include('operaton:historyTimeToLive="40"');
+      expect(contents).not.to.include('camunda:historyTimeToLive');
     });
 
   });

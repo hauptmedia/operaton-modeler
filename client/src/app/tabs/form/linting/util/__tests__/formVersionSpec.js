@@ -6,17 +6,25 @@ describe('tabs/form/linting/util - formVersion', function() {
 
     it('should return correct formJS version from version list', function() {
 
-      // given
-      const schema = {
-        executionPlatform: 'Operaton',
-        executionPlatformVersion: '1.0',
-      };
+      [
+        '1.0',
+        '2.0',
+        '2.1',
+        '2.2'
+      ].forEach((executionPlatformVersion) => {
 
-      // when
-      const version = getFormJSVersion(schema);
+        // given
+        const schema = {
+          executionPlatform: 'Operaton',
+          executionPlatformVersion,
+        };
 
-      // then
-      expect(version).to.eql('1.14.0');
+        // when
+        const version = getFormJSVersion(schema);
+
+        // then
+        expect(version).to.eql('1.14.0');
+      });
 
     });
 
@@ -39,4 +47,3 @@ describe('tabs/form/linting/util - formVersion', function() {
   });
 
 });
-

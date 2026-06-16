@@ -884,8 +884,10 @@ describe('<BpmnEditor>', function() {
         expect(convertedXML).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/bpmn"');
         expect(convertedXML).to.contain('modeler:executionPlatform="Operaton"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}`);
-        expect(convertedXML).to.contain('xmlns:camunda="http://camunda.org/schema/1.0/bpmn"');
+        expect(convertedXML).to.contain('operaton:historyTimeToLive="900"');
 
+        expect(convertedXML).not.to.contain('camunda:');
+        expect(convertedXML).not.to.contain('xmlns:camunda="http://camunda.org/schema/1.0/bpmn"');
         expect(convertedXML).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
 
       });

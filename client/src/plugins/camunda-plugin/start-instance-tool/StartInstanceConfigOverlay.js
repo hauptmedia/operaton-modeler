@@ -64,7 +64,7 @@ export default class StartInstanceConfigOverlay extends React.PureComponent {
 
                 <Section.Body>
                   <p className="intro">
-                    Enter details to start a process instance on Operaton. Alternatively, you can start a process instance <a href="https://docs.operaton.org/manual/latest/reference/rest/process-definition/post-start-process-instance/#request">via a Rest Client</a>.
+                    Enter details to start a process instance on Operaton. Alternatively, you can start a process instance <a href="https://docs.operaton.org/reference/latest/rest-api/#operation/startProcessInstanceByKey">via a Rest Client</a>.
                   </p>
 
                   <fieldset>
@@ -81,7 +81,7 @@ export default class StartInstanceConfigOverlay extends React.PureComponent {
                         component={ TextInput }
                         multiline={ true }
                         label="Variables (optional)"
-                        description={ <p>Must be a proper <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON string</a> representing <a href="https://docs.operaton.org/manual/latest/reference/rest/process-definition/post-start-process-instance/#starting-a-process-instance-at-its-default-initial-activity">process instance variables</a>.</p> }
+                        description={ <p>Must be a proper <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON string</a> representing <a href="https://docs.operaton.org/docs/documentation/reference/rest/overview/variables">process instance variables</a>.</p> }
                         hint="A JSON string representing the variables the process instance is started with."
                         validate={ (value) => {
                           if (value && value.trim().length > 0) {

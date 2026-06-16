@@ -736,8 +736,8 @@ function getDocumentationRef(field) {
   }
 
   if (field.type === 'default') {
-    return 'https://docs.operaton.org/modeler/forms';
+    return 'https://docs.operaton.org/docs/documentation/user-guide/task-forms/#operaton-forms';
   }
 
-  return 'https://docs.operaton.org/modeler/forms';
+  return 'https://docs.operaton.org/docs/documentation/user-guide/task-forms/#operaton-forms';
 }
