@@ -2,6 +2,8 @@
 
 An integrated modeling solution for BPMN, DMN, and Forms based on [bpmn.io](http://bpmn.io).
 
+Operaton Modeler is ported from [Fluxnova Modeler](https://github.com/finos/fluxnova-modeler) and adapted for the Operaton platform.
+
 ![Operaton Modeler](resources/screenshot.png)
 
 ## Resources
@@ -49,4 +51,3 @@ Copyright 2025 FINOS
 MIT
 
 Uses [bpmn-js](https://github.com/bpmn-io/bpmn-js), [dmn-js](https://github.com/bpmn-io/dmn-js), [cmmn-js](https://github.com/bpmn-io/cmmn-js), and [form-js](https://github.com/bpmn-io/form-js) licensed under the [bpmn.io license](http://bpmn.io/license).
-
