@@ -236,7 +236,7 @@ describe('<MultiSheetTab>', function() {
       // then
       expect(actionSpy).to.have.been.calledTwice;
       expect(actionSpy).to.have.been.calledWith('open-external-url', {
-        url: 'https://github.com/finos/fluxnova-modeler/issues'
+        url: 'https://github.com/operaton/operaton-modeler/issues'
       });
     });
 

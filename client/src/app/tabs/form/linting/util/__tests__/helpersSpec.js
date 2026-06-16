@@ -26,7 +26,7 @@ describe('tabs/form/linting/util - helpers', function() {
 
       // given
       const schema = {
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.0',
       };
 
@@ -34,7 +34,7 @@ describe('tabs/form/linting/util - helpers', function() {
       const label = getExecutionPlatformLabel(schema);
 
       // then
-      expect(label).to.eql('Fluxnova Platform 1.0');
+      expect(label).to.eql('Operaton 1.0');
 
     });
 

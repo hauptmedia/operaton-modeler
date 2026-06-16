@@ -6,6 +6,6 @@
     "version": "{{ EXPORTER_VERSION }}"
   },
   "components": [],
-  "executionPlatform": "Fluxnova Platform",
-  "executionPlatformVersion": "{{ FLUXNOVA_PLATFORM_VERSION }}"
+  "executionPlatform": "Operaton",
+  "executionPlatformVersion": "{{ OPERATON_VERSION }}"
 }

@@ -307,7 +307,7 @@ describe('<StartInstanceTool>', function() {
       // then
       expect(deployedTo).to.exist;
       expect(deployedTo.executionPlatformVersion).to.be.null;
-      expect(deployedTo.executionPlatform).to.equal('Fluxnova Platform');
+      expect(deployedTo.executionPlatform).to.equal('Operaton');
     });
 
 
@@ -450,7 +450,7 @@ describe('<StartInstanceTool>', function() {
         const deployedTo = actionSpy.args[0][0].payload.deployedTo;
         expect(deployedTo).to.exist;
         expect(deployedTo.executionPlatformVersion).to.equal('1.0.0');
-        expect(deployedTo.executionPlatform).to.equal('Fluxnova Platform');
+        expect(deployedTo.executionPlatform).to.equal('Operaton');
       });
 
 
@@ -533,7 +533,7 @@ describe('<StartInstanceTool>', function() {
         const deployedTo = actionSpy.args[0][0].payload.deployedTo;
         expect(deployedTo).to.exist;
         expect(deployedTo.executionPlatformVersion).to.equal('1.0.0');
-        expect(deployedTo.executionPlatform).to.equal('Fluxnova Platform');
+        expect(deployedTo.executionPlatform).to.equal('Operaton');
       });
 
 

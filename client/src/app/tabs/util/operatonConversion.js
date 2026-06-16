@@ -6,45 +6,45 @@ import { ENGINES, getLatestStable } from '../../../util/Engines';
 import { Type } from './type';
 import { XMLValidator } from 'fast-xml-parser';
 
-const NAMESPACE_URI_BPMN_FLUXNOVA = 'http://fluxnova.finos.org/schema/1.0/bpmn';
-const NAMESPACE_URI_DMN_FLUXNOVA = 'http://fluxnova.finos.org/schema/1.0/dmn';
-const NAMESPACE_URI_MODELER = 'http://fluxnova.finos.org/schema/modeler/1.0';
-const EXECUTION_PLATFORM_FLUXNOVA = 'Fluxnova Platform';
+const NAMESPACE_URI_BPMN_OPERATON = 'http://operaton.org/schema/1.0/bpmn';
+const NAMESPACE_URI_DMN_OPERATON = 'http://operaton.org/schema/1.0/dmn';
+const NAMESPACE_URI_MODELER = 'http://operaton.org/schema/modeler/1.0';
+const EXECUTION_PLATFORM_OPERATON = 'Operaton';
 const NAMESPACE_URI_C8 = 'http://camunda.org/schema/zeebe/1.0';
 const EXECUTION_PLATFORM_C8 = 'Camunda Cloud';
 
-export async function convertBpmnToFluxnovaIfRequired(contents, onAction, onContentUpdated) {
-  const entity = await convertToFluxnovaIfRequired(contents, Type.BPMN, onAction);
+export async function convertBpmnToOperatonIfRequired(contents, onAction, onContentUpdated) {
+  const entity = await convertToOperatonIfRequired(contents, Type.BPMN, onAction);
   const result = getConvertedResult(entity, onContentUpdated);
   return result || contents;
 }
 
-export async function convertDmnToFluxnovaIfRequired(contents, onAction, onContentUpdated) {
-  const entity = await convertToFluxnovaIfRequired(contents, Type.DMN, onAction);
+export async function convertDmnToOperatonIfRequired(contents, onAction, onContentUpdated) {
+  const entity = await convertToOperatonIfRequired(contents, Type.DMN, onAction);
   const result = getConvertedResult(entity, onContentUpdated);
   return result || contents;
 }
 
-export async function convertFormToFluxnovaIfRequired(contents, onAction) {
-  const entity = await convertToFluxnovaIfRequired(contents, Type.FORM, onAction);
+export async function convertFormToOperatonIfRequired(contents, onAction) {
+  const entity = await convertToOperatonIfRequired(contents, Type.FORM, onAction);
   const result = getConvertedResult(entity);
   return result || contents;
 }
 
-async function convertToFluxnovaIfRequired(contents, type, onAction) {
+async function convertToOperatonIfRequired(contents, type, onAction) {
   if (isConversionCandidate(contents, type)) {
-    return await handleFluxnovaConversion(contents, type, onAction);
+    return await handleOperatonConversion(contents, type, onAction);
   }
   return contents;
 }
 
-async function handleFluxnovaConversion(contents, type, onAction) {
+async function handleOperatonConversion(contents, type, onAction) {
   const isC8Model = is(contents, NAMESPACE_URI_C8, EXECUTION_PLATFORM_C8);
-  let dialog = isC8Model ? getFluxnovaUnsupportedDialog() : getFluxnovaConversionDialog(type);
+  let dialog = isC8Model ? getOperatonUnsupportedDialog() : getOperatonConversionDialog(type);
   const { button } = await onAction('show-dialog', dialog);
 
   if (button === '0') {
-    const result = await convertToFluxnova(contents, type);
+    const result = await convertToOperaton(contents, type);
     return {
       result,
       converted: true
@@ -58,11 +58,11 @@ async function handleFluxnovaConversion(contents, type, onAction) {
 }
 
 function isConversionCandidate(contents, type) {
-  const ns = type === Type.BPMN ? NAMESPACE_URI_BPMN_FLUXNOVA : NAMESPACE_URI_DMN_FLUXNOVA;
-  return isEntityValid(contents, type) && !is(contents, ns, EXECUTION_PLATFORM_FLUXNOVA);
+  const ns = type === Type.BPMN ? NAMESPACE_URI_BPMN_OPERATON : NAMESPACE_URI_DMN_OPERATON;
+  return isEntityValid(contents, type) && !is(contents, ns, EXECUTION_PLATFORM_OPERATON);
 }
 
-function getFluxnovaConversionDialog(type) {
+function getOperatonConversionDialog(type) {
   return {
     type: 'error',
     title: `Unsupported ${type} file detected`,
@@ -70,24 +70,24 @@ function getFluxnovaConversionDialog(type) {
       { id: '0', label: 'Yes' },
       { id: '1', label: 'Close File' }
     ],
-    message: `Would you like to migrate your ${type} file to be Fluxnova compatible? `,
+    message: `Would you like to migrate your ${type} file to be Operaton compatible? `,
     detail: [
-      'This modeler only supports Fluxnova files.',
+      'This modeler only supports Operaton files.',
       'Please make sure to have a backup of this file before migrating.',
     ].join('\n')
   };
 }
 
-function getFluxnovaUnsupportedDialog() {
+function getOperatonUnsupportedDialog() {
   return {
     type: 'error',
     title: 'Unsupported Camunda 8 file detected',
     buttons: [
       { id: '2', label: 'Close File' }
     ],
-    message: 'Camunda 8 files are unsupported in Fluxnova',
+    message: 'Camunda 8 files are unsupported in Operaton',
     detail: [
-      'This modeler only supports Fluxnova files.',
+      'This modeler only supports Operaton files.',
     ].join('\n')
   };
 }
@@ -103,8 +103,8 @@ function getConvertedResult(entity, onContentUpdated) {
   return null;
 }
 
-async function convertToFluxnova(contents, type) {
-  const latestStable = getLatestStable(ENGINES.FLUXNOVA);
+async function convertToOperaton(contents, type) {
+  const latestStable = getLatestStable(ENGINES.OPERATON);
   if ([ Type.BPMN, Type.DMN ].includes(type)) {
     return await handleConversionForXml(contents, type, latestStable);
   } else {
@@ -117,18 +117,18 @@ async function handleConversionForXml(contents, type, latestStable) {
   try {
     if (type === Type.BPMN) {
       const definitions = await getBpmnDefinitionsForConversion(contents);
-      definitions.$attrs['xmlns:fluxnova'] = NAMESPACE_URI_BPMN_FLUXNOVA;
+      definitions.$attrs['xmlns:operaton'] = NAMESPACE_URI_BPMN_OPERATON;
       const updatedDefinitions = updateCommonAttributesForXml(definitions, latestStable);
       convertedXml = await toBpmnXml(updatedDefinitions);
     } else {
       const definitions = await getDmnDefinitionsForConversion(contents);
-      definitions.namespace = NAMESPACE_URI_DMN_FLUXNOVA;
+      definitions.namespace = NAMESPACE_URI_DMN_OPERATON;
       const updatedDefinitions = updateCommonAttributesForXml(definitions, latestStable);
       convertedXml = await toDmnXml(updatedDefinitions);
     }
     return convertedXml.xml;
   } catch (error) {
-    throw new Error('Error converting model to Fluxnova');
+    throw new Error('Error converting model to Operaton');
   }
 }
 
@@ -146,13 +146,13 @@ function updateCommonAttributesForXml(definitions, latestStable) {
   updatedAttributes.exporter = Metadata.name;
   updatedAttributes.exporterVersion = Metadata.version;
   updatedAttributes.$attrs['xmlns:modeler'] = NAMESPACE_URI_MODELER;
-  updatedAttributes.$attrs['modeler:executionPlatform'] = ENGINES.FLUXNOVA;
+  updatedAttributes.$attrs['modeler:executionPlatform'] = ENGINES.OPERATON;
   updatedAttributes.$attrs['modeler:executionPlatformVersion'] = latestStable;
   return updatedAttributes;
 }
 
 function updateCommonAttributes(definitions, latestStable) {
-  definitions.executionPlatform = ENGINES.FLUXNOVA;
+  definitions.executionPlatform = ENGINES.OPERATON;
   definitions.executionPlatformVersion = latestStable;
   return definitions;
 }

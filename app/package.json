@@ -1,13 +1,13 @@
 {
-  "name": "fluxnova-modeler",
+  "name": "operaton-modeler",
   "version": "1.2.0",
-  "description": "Fluxnova Modeler for BPMN, DMN and CMMN, based on bpmn.io",
+  "description": "Operaton Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "private": true,
   "main": "prod.js",
   "author": {
-    "name": "FINOS",
-    "email": "fluxnova@lists.finos.org",
-    "url": "https://fluxnova.finos.org"
+    "name": "Operaton",
+    "email": "info@operaton.org",
+    "url": "https://operaton.org"
   },
   "license": "MIT",
   "scripts": {
@@ -24,10 +24,10 @@
     "mri": "^1.1.6",
     "parents": "^1.0.1"
   },
-  "homepage": "https://github.com/finos/fluxnova-modeler",
+  "homepage": "https://github.com/operaton/operaton-modeler",
   "repository": {
     "type": "git",
-    "url": "https://github.com/finos/fluxnova-modeler"
+    "url": "https://github.com/operaton/operaton-modeler"
   },
   "optionalDependencies": {
     "vscode-windows-ca-certs": "^0.3.0"

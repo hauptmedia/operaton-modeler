@@ -24,18 +24,18 @@ body:
     id: expected-behavior
     attributes:
       label: Expected behavior
-      description: A clear and concise description of what you expected to happen. 
+      description: A clear and concise description of what you expected to happen.
     validations:
       required: true
   - type: textarea
     id: environment
     attributes:
       label: Environment
-      description: 'The environment on which this error was observed. Hint: you may use the "Provide feedback" button in the bottom-right corner of the Fluxnova Modeler to copy environment info directly to your clipboard!'
+      description: 'The environment on which this error was observed. Hint: you may use the "Provide feedback" button in the bottom-right corner of the Operaton Modeler to copy environment info directly to your clipboard!'
       value: |
              - OS: [e.g. MacOS 10.2, Windows 10]
-             - Fluxnova Modeler Version: [e.g. 1.0.0]
-             - Execution Platform: [e.g. Fluxnova 1]
+             - Operaton Modeler Version: [e.g. 1.0.0]
+             - Execution Platform: [e.g. Operaton 1]
              - Installed plug-ins: [...]
     validations:
       required: true

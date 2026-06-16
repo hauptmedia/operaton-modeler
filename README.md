@@ -1,18 +1,13 @@
-[![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://community.finos.org/docs/governance/Software-Projects/stages/incubating)
-
-# Fluxnova Modeler
-
-
-[![CI](https://github.com/finos/fluxnova-modeler/actions/workflows/CI.yml/badge.svg)](https://github.com/finos/fluxnova-modeler/actions/workflows/CI.yml)
+# Operaton Modeler
 
 An integrated modeling solution for BPMN, DMN, and Forms based on [bpmn.io](http://bpmn.io).
 
-![Fluxnova Modeler](resources/screenshot.png)
+![Operaton Modeler](resources/screenshot.png)
 
 ## Resources
 
 * [Changelog](./CHANGELOG.md)
-* [Report a Bug](https://github.com/finos/fluxnova-modeler/issues)
+* [Report a Bug](https://github.com/operaton/operaton-modeler/issues)
 
 ## Building the Application
 

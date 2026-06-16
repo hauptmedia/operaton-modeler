@@ -52,7 +52,7 @@ const config = {
 
         // TODO(@philippfromme): workaround for https://github.com/camunda/camunda-modeler/issues/3249
         // cf. https://github.com/xz64/license-webpack-plugin/issues/124
-        return packageName === 'fluxnova-modeler';
+        return packageName === 'operaton-modeler';
       },
       renderLicenses: (modules) => {
         return JSON.stringify(modules, null, 2);

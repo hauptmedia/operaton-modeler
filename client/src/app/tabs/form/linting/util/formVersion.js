@@ -1,7 +1,7 @@
 import { toSemverMinor } from './helpers';
 
 export const formJSVersions = {
-  'Fluxnova Platform': {
+  'Operaton': {
     '1.0': '1.14.0'
   }
 };

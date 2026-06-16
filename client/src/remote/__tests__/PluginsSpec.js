@@ -172,7 +172,7 @@ describe('plugins', function() {
       // then
       expect(() => {
         global.getModelerDirectory();
-      }).to.throw('not implemented in Fluxnova Modeler >= 1');
+      }).to.throw('not implemented in Operaton Modeler >= 1');
 
     });
 

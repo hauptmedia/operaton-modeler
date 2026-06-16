@@ -463,7 +463,7 @@ describe('<OverlayEventHandler>', function() {
           const { executionPlatform, executionPlatformVersion } = track.getCall(0).args[1];
 
           // then
-          expect(executionPlatform).to.eql('Fluxnova Platform');
+          expect(executionPlatform).to.eql('Operaton');
           expect(executionPlatformVersion).to.eql('1.0.0');
 
         });
@@ -487,7 +487,7 @@ describe('<OverlayEventHandler>', function() {
           const { executionPlatform, executionPlatformVersion } = track.getCall(0).args[1];
 
           // then
-          expect(executionPlatform).to.eql('Fluxnova Platform');
+          expect(executionPlatform).to.eql('Operaton');
           expect(executionPlatformVersion).to.eql('1.0.0');
 
 
@@ -515,7 +515,7 @@ describe('<OverlayEventHandler>', function() {
           const { executionPlatform } = track.getCall(0).args[1];
 
           // then
-          expect(executionPlatform).to.eql('Fluxnova Platform');
+          expect(executionPlatform).to.eql('Operaton');
         });
 
 
@@ -537,7 +537,7 @@ describe('<OverlayEventHandler>', function() {
           const { executionPlatform } = track.getCall(0).args[1];
 
           // then
-          expect(executionPlatform).to.eql('Fluxnova Platform');
+          expect(executionPlatform).to.eql('Operaton');
         });
 
       });

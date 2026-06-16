@@ -28,7 +28,7 @@ export default class CamundaAPI extends RestAPI {
     const form = new FormData();
 
     form.append('deployment-name', name);
-    form.append('deployment-source', 'Fluxnova Modeler');
+    form.append('deployment-source', 'Operaton Modeler');
 
     // make sure that we do not re-deploy already existing deployment
     form.append('enable-duplicate-filtering', 'true');

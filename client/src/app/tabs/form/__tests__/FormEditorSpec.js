@@ -52,7 +52,7 @@ const { spy } = sinon;
 
 describe('<FormEditor>', function() {
 
-  const latestStable = getLatestStable(ENGINES.FLUXNOVA);
+  const latestStable = getLatestStable(ENGINES.OPERATON);
 
   it('should render', async function() {
     const { instance } = await renderEditor(schema);
@@ -493,7 +493,7 @@ describe('<FormEditor>', function() {
       });
 
       // when
-      await renderEditor('{ "executionPlatform":"Fluxnova Platform", "importError": true }', {
+      await renderEditor('{ "executionPlatform":"Operaton", "importError": true }', {
         onImport: onImportSpy
       });
 
@@ -658,25 +658,25 @@ describe('<FormEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfile, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: latestStable
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0.0)', expectEngineProfile(engineProfileSchema, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0.0)', expectEngineProfile(engineProfileSchema, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfile, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0)', expectEngineProfile(missingPatchEngineProfile, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfile, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0.1)', expectEngineProfile(patchEngineProfile, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.1'
     }));
 
@@ -688,27 +688,27 @@ describe('<FormEditor>', function() {
 
       // assume
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.0.0'
       });
 
       // when
       const schema = instance.getCached().form.getSchema();
 
-      schema.executionPlatform = 'Fluxnova Platform';
+      schema.executionPlatform = 'Operaton';
       schema.executionPlatformVersion = '1.1.0';
 
       instance.handleChanged();
 
       // then
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.1.0'
       });
     });
 
 
-    it('should open unknown execution profile form as Fluxnova Platform', async function() {
+    it('should open unknown execution profile form as Operaton', async function() {
 
       // given
       const onImportSpy = spy();
@@ -727,7 +727,7 @@ describe('<FormEditor>', function() {
       expect(onImportSpy).to.have.been.calledOnce;
 
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: latestStable
       });
     });
@@ -1306,11 +1306,11 @@ describe('<FormEditor>', function() {
 
   });
 
-  describe('fluxnova conversion', function() {
+  describe('operaton conversion', function() {
 
     describe('should convert', function() {
 
-      it('existing form to fluxnova', async function() {
+      it('existing form to operaton', async function() {
 
         // given
         const onAction = sinon.stub().resolves({
@@ -1333,7 +1333,7 @@ describe('<FormEditor>', function() {
 
         const schema = form.getSchema();
 
-        expect(schema.executionPlatform).to.be.eql('Fluxnova Platform');
+        expect(schema.executionPlatform).to.be.eql('Operaton');
         expect(schema.executionPlatformVersion).to.be.eql(latestStable);
 
       });
@@ -1342,7 +1342,7 @@ describe('<FormEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already fluxnova', async function() {
+      it('when model is already operaton', async function() {
 
         //  given
         const onAction = spy();

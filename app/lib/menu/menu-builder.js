@@ -588,7 +588,7 @@ class MenuBuilder {
     const topPart = [
       {
         label: 'Documentation',
-        click: () => browserOpen('https://docs.fluxnova.finos.org/modeler/')
+        click: () => browserOpen('https://docs.operaton.org/modeler/')
       },
       {
         label: 'Keyboard Shortcuts',
@@ -597,7 +597,7 @@ class MenuBuilder {
       getSeparatorTemplate(),
       {
         label: 'Search Feature Requests',
-        click: () => browserOpen('https://github.com/finos/fluxnova-modeler/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement')
+        click: () => browserOpen('https://github.com/operaton/operaton-modeler/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement')
       },
       {
         label: 'Report Issue',

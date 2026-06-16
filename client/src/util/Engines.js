@@ -11,7 +11,7 @@
 export const ENGINES = {
   PLATFORM: 'Camunda Platform',
   CLOUD: 'Camunda Cloud',
-  FLUXNOVA: 'Fluxnova Platform'
+  OPERATON: 'Operaton'
 };
 
 export const ENGINE_PROFILES = [
@@ -26,15 +26,15 @@ export const ENGINE_PROFILES = [
     latestStable: '8.6.0'
   },
   {
-    executionPlatform: ENGINES.FLUXNOVA,
-    executionPlatformVersions: [ '1.0.0' ,'2.0.0' ],
+    executionPlatform: ENGINES.OPERATON,
+    executionPlatformVersions: [ '1.0.0', '2.0.0' ],
     latestStable: '2.0.0'
   }
 ];
 
 export const ENGINE_LABELS = {
   [ ENGINES.PLATFORM ]: 'Camunda 7',
-  [ ENGINES.FLUXNOVA ]: 'Fluxnova',
+  [ ENGINES.OPERATON ]: 'Operaton',
   [ ENGINES.CLOUD ]: 'Camunda 8'
 };
 

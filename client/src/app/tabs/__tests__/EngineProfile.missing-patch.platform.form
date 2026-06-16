@@ -1,10 +1,10 @@
 {
 	"type": "default",
 	"components": [],
-	"executionPlatform": "Fluxnova Platform",
+	"executionPlatform": "Operaton",
 	"executionPlatformVersion": "1.0.0",
 	"exporter": {
-		"name": "Fluxnova Modeler",
+		"name": "Operaton Modeler",
 		"version": "5.33.0-dev"
 	}
 }

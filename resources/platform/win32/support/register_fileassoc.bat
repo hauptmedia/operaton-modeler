@@ -16,7 +16,7 @@ set DIR=%cd%
 
 echo %DIR%
 set EXECUTABLE_DIR=!DIR:\=\\!
-set EXECUTABLE_PATH=%EXECUTABLE_DIR%\\Fluxnova Modeler.exe
+set EXECUTABLE_PATH=%EXECUTABLE_DIR%\\Operaton Modeler.exe
 
 echo "%EXECUTABLE_PATH%"
 

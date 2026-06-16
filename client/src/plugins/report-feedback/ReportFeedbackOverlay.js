@@ -16,7 +16,7 @@ import { ReportFeedbackSystemInfoSection } from './ReportFeedbackSystemInfoSecti
 
 import * as css from './ReportFeedbackOverlay.less';
 
-const REPORT_ISSUE_LINK = 'https://github.com/finos/fluxnova-modeler/issues/new/choose';
+const REPORT_ISSUE_LINK = 'https://github.com/operaton/operaton-modeler/issues/new/choose';
 
 const OFFSET = { right: 0 };
 

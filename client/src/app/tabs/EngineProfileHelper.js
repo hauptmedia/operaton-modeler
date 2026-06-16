@@ -59,12 +59,12 @@ function fixExecutionPlatform(engineProfile = {}) {
     executionPlatform = 'Camunda Cloud'
   } = engineProfile;
 
-  if ([ 'Camunda Platform', 'Camunda Cloud', 'Fluxnova Platform' ].includes(executionPlatform)) {
+  if ([ 'Camunda Platform', 'Camunda Cloud', 'Operaton' ].includes(executionPlatform)) {
     return engineProfile;
   }
 
   return {
     ...engineProfile,
-    executionPlatform: 'Fluxnova Platform'
+    executionPlatform: 'Operaton'
   };
 }

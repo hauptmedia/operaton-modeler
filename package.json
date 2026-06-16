@@ -1,8 +1,8 @@
 {
-  "name": "fluxnova-modeler-builder",
+  "name": "operaton-modeler-builder",
   "version": "0.0.0",
   "private": true,
-  "description": "Fluxnova Modeler for BPMN, DMN and CMMN, based on bpmn.io",
+  "description": "Operaton Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "scripts": {
     "app:auto-test": "npm run app:test -- --watch",
     "app:dev": "electron ./dev.js --force-update-checks resources/diagram/simple.bpmn",
@@ -36,16 +36,16 @@
     "start": "run-s \"dev -- {@}\" --",
     "link-dependencies": "node tasks/link-dependencies.js"
   },
-  "author": "FINOS <http://fluxnova.finos.org>",
+  "author": "Operaton <https://operaton.org>",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/finos/fluxnova-modeler",
+  "homepage": "https://github.com/operaton/operaton-modeler",
   "workspaces": [
     "app",
     "client"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/finos/fluxnova-modeler"
+    "url": "https://github.com/operaton/operaton-modeler"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

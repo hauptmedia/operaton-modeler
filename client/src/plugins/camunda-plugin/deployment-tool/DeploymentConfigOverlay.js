@@ -314,7 +314,7 @@ export default class DeploymentConfigOverlay extends React.PureComponent {
                             );
                           } }
                           label="REST endpoint"
-                          hint="Should point to a running Fluxnova REST API endpoint."
+                          hint="Should point to a running Operaton REST API endpoint."
                         />
 
                         {

@@ -37,7 +37,7 @@ export default function CockpitLink(props) {
   return (
     <div className={ css.CockpitLink }>
       { children }
-      { link ? <a href={ link }>Open in Fluxnova Monitoring</a> : null }
+      { link ? <a href={ link }>Open in Operaton Cockpit</a> : null }
     </div>
   );
 }

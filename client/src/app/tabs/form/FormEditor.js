@@ -44,12 +44,12 @@ import EngineProfileHelper from '../EngineProfileHelper';
 import { ENGINES } from '../../../util/Engines';
 
 import { FormPreviewToggle } from './FormPreviewToggle';
-import { convertFormToFluxnovaIfRequired } from '../util/fluxnovaConversion';
+import { convertFormToOperatonIfRequired } from '../util/operatonConversion';
 
 const LOW_PRIORITY = 500;
 
 export const DEFAULT_ENGINE_PROFILE = {
-  executionPlatform: ENGINES.FLUXNOVA
+  executionPlatform: ENGINES.OPERATON
 };
 
 const FORM_LAYOUT_KEY = 'formEditor';
@@ -194,7 +194,7 @@ export class FormEditor extends CachedComponent {
 
     try {
       schemaJSON = JSON.parse(schema);
-      schemaJSON = await convertFormToFluxnovaIfRequired(schemaJSON, this.props.onAction);
+      schemaJSON = await convertFormToOperatonIfRequired(schemaJSON, this.props.onAction);
 
       /*
        * Note @pinussilvestrus:
@@ -736,8 +736,8 @@ function getDocumentationRef(field) {
   }
 
   if (field.type === 'default') {
-    return 'https://docs.fluxnova.finos.org/modeler/forms';
+    return 'https://docs.operaton.org/modeler/forms';
   }
 
-  return 'https://docs.fluxnova.finos.org/modeler/forms';
+  return 'https://docs.operaton.org/modeler/forms';
 }

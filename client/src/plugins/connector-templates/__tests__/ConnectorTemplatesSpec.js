@@ -45,7 +45,7 @@ describe('<ConnectorTemplates>', function() {
 
     // then
     await waitFor(() => {
-      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'success', title: 'Fluxnova Connector templates updated' });
+      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'success', title: 'Operaton Connector templates updated' });
     });
 
     expect(triggerActionSpy).to.have.been.calledWith('elementTemplates.reload');
@@ -72,7 +72,7 @@ describe('<ConnectorTemplates>', function() {
 
     // then
     await waitFor(() => {
-      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'success', title: 'Fluxnova Connector templates up to date' });
+      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'success', title: 'Operaton Connector templates up to date' });
     });
 
     expect(triggerActionSpy).to.have.been.calledWith('elementTemplates.reload');
@@ -99,7 +99,7 @@ describe('<ConnectorTemplates>', function() {
 
     // then
     await waitFor(() => {
-      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'warning', title: 'Fluxnova Connector templates updated with warnings' });
+      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'warning', title: 'Operaton Connector templates updated with warnings' });
     });
     expect(displayNotificationSpy.args[0][0].content).to.exist;
   });
@@ -125,7 +125,7 @@ describe('<ConnectorTemplates>', function() {
 
     // then
     await waitFor(() => {
-      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'error', title: 'Error updating Fluxnova Connector templates' });
+      expect(displayNotificationSpy).to.have.been.calledWithMatch({ type: 'error', title: 'Error updating Operaton Connector templates' });
     });
     expect(displayNotificationSpy.args[0][0].content).to.exist;
   });

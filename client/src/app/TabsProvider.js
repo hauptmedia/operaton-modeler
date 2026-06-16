@@ -63,18 +63,18 @@ import { getDefaultVersion } from './tabs/EngineProfile';
 const BPMN_HELP_MENU = [
   {
     label: 'BPMN 2.0 Tutorial',
-    action: 'https://docs.fluxnova.finos.org/modeler/bpmn'
+    action: 'https://docs.operaton.org/modeler/bpmn'
   },
   {
     label: 'BPMN Modeling Reference',
-    action: 'https://docs.fluxnova.finos.org/reference/bpmn20'
+    action: 'https://docs.operaton.org/reference/bpmn20'
   }
 ];
 
 const DMN_HELP_MENU = [
   {
     label: 'DMN Tutorial',
-    action: 'https://docs.fluxnova.finos.org/modeler/dmn'
+    action: 'https://docs.operaton.org/modeler/dmn'
   }
 ];
 
@@ -164,7 +164,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'BPMN diagram',
-            group: 'Fluxnova',
+            group: 'Operaton',
             action: 'create-bpmn-diagram'
           } ];
         },
@@ -214,7 +214,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'DMN diagram',
-            group: 'Fluxnova',
+            group: 'Operaton',
             action: 'create-dmn-diagram'
           } ];
         },
@@ -248,7 +248,7 @@ export default class TabsProvider {
         getNewFileMenu() {
           return [ {
             label: 'Form',
-            group: 'Fluxnova',
+            group: 'Operaton',
             action: 'create-form'
           } ];
         },
@@ -519,12 +519,12 @@ function replaceVersions(contents) {
 
   const platformVersion = getDefaultVersion(ENGINES.PLATFORM);
   const cloudVersion = getDefaultVersion(ENGINES.CLOUD);
-  const fluxnovaVersion = getDefaultVersion(ENGINES.FLUXNOVA);
+  const operatonVersion = getDefaultVersion(ENGINES.OPERATON);
 
   return (
     contents
       .replace('{{ CAMUNDA_PLATFORM_VERSION }}', platformVersion)
-      .replace('{{ FLUXNOVA_PLATFORM_VERSION }}', fluxnovaVersion)
+      .replace('{{ OPERATON_VERSION }}', operatonVersion)
       .replace('{{ CAMUNDA_CLOUD_VERSION }}', cloudVersion)
   );
 }

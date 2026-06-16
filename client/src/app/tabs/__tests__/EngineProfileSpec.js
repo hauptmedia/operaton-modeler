@@ -58,7 +58,7 @@ describe('<EngineProfile>', function() {
     fireEvent.click(button);
 
     // then
-    expect(getByText(/This file can be deployed and executed on Fluxnova/)).to.exist;
+    expect(getByText(/This file can be deployed and executed on Operaton/)).to.exist;
   });
 
 
@@ -182,7 +182,7 @@ describe('<EngineProfile>', function() {
         [ ENGINES.CLOUD, '8.100', '8.100 (alpha)' ],
         [ ENGINES.PLATFORM, '7.14', '7.14' ],
         [ ENGINES.PLATFORM, '7.500', '7.500 (alpha)' ],
-        [ ENGINES.FLUXNOVA, '0.0', '0.0' ],
+        [ ENGINES.OPERATON, '0.0', '0.0' ],
         [ undefined, '10.0', '10.0' ],
       ];
 
@@ -201,9 +201,9 @@ describe('<EngineProfile>', function() {
 
       // given
       const inputs =
-      [ [ ENGINES.FLUXNOVA, '7.23.0', 'Fluxnova 7.23 (unsupported)' ],
-        [ ENGINES.FLUXNOVA, '1.0.0', 'Fluxnova 1.0' ],
-        [ ENGINES.FLUXNOVA, '', 'Fluxnova' ]
+      [ [ ENGINES.OPERATON, '7.23.0', 'Operaton 7.23 (unsupported)' ],
+        [ ENGINES.OPERATON, '1.0.0', 'Operaton 1.0' ],
+        [ ENGINES.OPERATON, '', 'Operaton' ]
       ];
 
       // then
@@ -452,7 +452,7 @@ function expectCloudHelp(getByRole) {
 }
 
 function expectPlatformHelp(getByRole) {
-  expectHelpText(getByRole, 'https://docs.fluxnova.finos.org/');
+  expectHelpText(getByRole, 'https://docs.operaton.org/');
 }
 
 function selectVersion(select, version) {

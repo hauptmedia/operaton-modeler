@@ -63,5 +63,5 @@ jobs:
     - name: Upload build artifacts ${{ matrix.os }}
       uses: actions/upload-artifact@v4
       with:
-        name: fluxnova-modeler-${{ steps.get-version.outputs.APP_VERSION }}-${{ matrix.os }}
+        name: operaton-modeler-${{ steps.get-version.outputs.APP_VERSION }}-${{ matrix.os }}
         path: dist

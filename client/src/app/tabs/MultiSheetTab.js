@@ -155,7 +155,7 @@ export class MultiSheetTab extends CachedComponent {
 
     if (button === 'ask-in-forum') {
       onAction('open-external-url', {
-        url: 'https://github.com/finos/fluxnova-modeler/issues'
+        url: 'https://github.com/operaton/operaton-modeler/issues'
       });
     }
   }

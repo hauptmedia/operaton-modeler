@@ -124,7 +124,7 @@ function FormType(props) {
   const getOptions = () => {
     return [
       { value: '', label: translate('<none>') },
-      { value: 'formRef', label: translate('Fluxnova Forms') },
+      { value: 'formRef', label: translate('Operaton Forms') },
       { value: 'formKey', label: translate('Embedded or External Task Forms') },
       { value: 'formData', label: translate('Generated Task Forms') }
     ];

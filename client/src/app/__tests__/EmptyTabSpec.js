@@ -117,7 +117,7 @@ describe('<EmptyTab>', function() {
       expect(queryByTestId('welcome-page-platform')).to.exist;
       const headings = getAllByRole('heading', { level: 3 });
       expect(headings).to.have.length(2);
-      expect(headings[0].textContent).to.equal('Fluxnova');
+      expect(headings[0].textContent).to.equal('Operaton');
     });
 
   });

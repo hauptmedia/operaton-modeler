@@ -119,7 +119,7 @@ describe('tabs/form/linting - FormLinter', function() {
 
       // then
       expect(reports).to.eql([
-        { id: 'test_checkbox', label: 'Checkbox', message: 'A <Checkbox> is not supported by Fluxnova Platform test_ver', category: 'error' }
+        { id: 'test_checkbox', label: 'Checkbox', message: 'A <Checkbox> is not supported by Operaton test_ver', category: 'error' }
       ]);
 
     });
@@ -153,7 +153,7 @@ describe('tabs/form/linting - FormLinter', function() {
 
       // then
       expect(reports).to.eql([
-        { id: 'test_submit', label: 'Submit', message: 'Submit buttons will be hidden in favor of built-in ones in the Fluxnova Tasklist.', category: 'info' }
+        { id: 'test_submit', label: 'Submit', message: 'Submit buttons will be hidden in favor of built-in ones in the Operaton Tasklist.', category: 'info' }
       ]);
 
     });

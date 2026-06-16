@@ -14,11 +14,11 @@ import { UAParser } from 'ua-parser-js';
 
 
 const TAB_TYPE_MAPPING = {
-  'bpmn': 'BPMN - Fluxnova',
+  'bpmn': 'BPMN - Operaton',
   'cloud-bpmn': 'BPMN - Camunda 8',
-  'dmn': 'DMN - Fluxnova',
+  'dmn': 'DMN - Operaton',
   'cloud-dmn': 'DMN - Camunda 8',
-  'form': 'Form - Fluxnova',
+  'form': 'Form - Operaton',
   'cloud-form': 'Form - Camunda 8'
 };
 
@@ -46,7 +46,7 @@ export class ClipboardCopySystemInfo {
       _appendVersion
     } = this;
 
-    let systemInfoText = '## Fluxnova Modeler system information';
+    let systemInfoText = '## Operaton Modeler system information';
 
     if (config.version) {
       systemInfoText = appendVersion(systemInfoText, this._getVersion());

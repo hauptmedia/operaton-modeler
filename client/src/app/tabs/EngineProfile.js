@@ -16,7 +16,7 @@ import semverCompare from 'semver-compare';
 
 
 import {
-  FLUXNOVA_ENGINE_VERSION
+  OPERATON_ENGINE_VERSION
 } from '../../util/Flags';
 
 import {
@@ -29,7 +29,7 @@ import { Fill } from '../slot-fill';
 import { ENGINES, ENGINE_LABELS, ENGINE_PROFILES, getLatestStable } from '../../util/Engines';
 
 const HELP_LINKS = {
-  [ ENGINES.FLUXNOVA ]: 'https://docs.fluxnova.finos.org/',
+  [ ENGINES.OPERATON ]: 'https://docs.operaton.org/',
   [ ENGINES.CLOUD ]: 'https://docs.camunda.io/?utm_source=modeler&utm_medium=referral'
 };
 
@@ -276,7 +276,7 @@ export function getStatusBarLabel(engineProfile) {
   if (!executionPlatformVersion) {
     return `${ENGINE_LABELS[executionPlatform]}`;
   } else {
-    return `Fluxnova ${toDisplayVersion(engineProfile)}`;
+    return `Operaton ${toDisplayVersion(engineProfile)}`;
   }
 }
 
@@ -304,7 +304,7 @@ export function getDefaultVersion(engine) {
 }
 
 function getFlagVersion() {
-  return FLUXNOVA_ENGINE_VERSION;
+  return OPERATON_ENGINE_VERSION;
 }
 
 function getVersions(engine) {

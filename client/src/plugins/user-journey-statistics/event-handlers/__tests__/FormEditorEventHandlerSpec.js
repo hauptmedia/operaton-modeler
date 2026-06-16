@@ -117,7 +117,7 @@ describe('<FormEditorEventHandler>', function() {
     });
 
 
-    it('should send engine profile - Fluxnova', async function() {
+    it('should send engine profile - Operaton', async function() {
 
       // given
       const tab = createTab({
@@ -135,7 +135,7 @@ describe('<FormEditorEventHandler>', function() {
       // then
       expect(track).to.have.been.calledWith(LAYOUT_CHANGED_EVENT_NAME, {
         layout: undefined,
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.0.0'
       });
     });
@@ -194,7 +194,7 @@ describe('<FormEditorEventHandler>', function() {
 
       // then
       expect(track).to.have.been.calledWith(INPUT_DATA_CHANGED_EVENT_NAME, {
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.0.0'
       });
     });
@@ -252,7 +252,7 @@ describe('<FormEditorEventHandler>', function() {
 
       // then
       expect(track).to.have.been.calledWith(PREVIEW_CHANGED_EVENT_NAME, {
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '1.0.0'
       });
     });

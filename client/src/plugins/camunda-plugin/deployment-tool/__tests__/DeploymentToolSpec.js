@@ -662,7 +662,7 @@ describe('<DeploymentTool>', function() {
         expect(actionSpy).to.have.been.calledOnce;
 
         const deployedTo = actionSpy.args[0][0].payload.deployedTo;
-        expect(deployedTo.executionPlatform).to.eql('Fluxnova Platform');
+        expect(deployedTo.executionPlatform).to.eql('Operaton');
         expect(deployedTo.executionPlatformVersion).to.eql('1.0.0');
       });
 
@@ -809,7 +809,7 @@ describe('<DeploymentTool>', function() {
         expect(actionSpy).to.have.been.calledOnce;
 
         const deployedTo = actionSpy.args[0][0].payload.deployedTo;
-        expect(deployedTo.executionPlatform).to.eql('Fluxnova Platform');
+        expect(deployedTo.executionPlatform).to.eql('Operaton');
         expect(deployedTo.executionPlatformVersion).to.eql('1.0.0');
       });
 

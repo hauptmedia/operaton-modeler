@@ -19,17 +19,17 @@ export async function determineCockpitUrl(engineUrl) {
     const cockpitUrl = await forEngineRestUrl(engineUrl).getCockpitUrl();
 
     if (cockpitUrl) {
-      log(`Using monitoring url from well known endpoint: ${engineUrl}`);
+      log(`Using cockpit url from well known endpoint: ${engineUrl}`);
       return cockpitUrl;
     }
 
     const fallbackUrl = getDefaultCockpitUrl(engineUrl);
-    log(`The well known endpoint did not provide a monitoring url, falling back to ${fallbackUrl}.`);
+    log(`The well known endpoint did not provide a cockpit url, falling back to ${fallbackUrl}.`);
     return fallbackUrl;
 
   } catch (e) {
     const fallbackUrl = getDefaultCockpitUrl(engineUrl);
-    log(`An error occurred retrieving the monitoring url from well known endpoint, falling back to ${fallbackUrl}. Cause: ${e}`);
+    log(`An error occurred retrieving the cockpit url from well known endpoint, falling back to ${fallbackUrl}. Cause: ${e}`);
     return fallbackUrl;
   }
 }
@@ -37,16 +37,15 @@ export async function determineCockpitUrl(engineUrl) {
 // helpers //////////
 
 function getDefaultCockpitUrl(engineUrl) {
-  return getDefaultWebAppsBaseUrl(engineUrl) + 'monitoring/default/#/';
+  return getDefaultWebAppsBaseUrl(engineUrl) + 'cockpit/default/#/';
 }
 
 function getDefaultWebAppsBaseUrl(engineUrl) {
   const [ protocol,, host, restRoot ] = engineUrl.split('/');
 
-  return isTomcat(restRoot) ? `${protocol}//${host}/fluxnova/app/` : `${protocol}//${host}/app/`;
+  return isTomcat(restRoot) ? `${protocol}//${host}/operaton/app/` : `${protocol}//${host}/app/`;
 }
 
 function isTomcat(restRoot) {
   return restRoot === 'engine-rest';
 }
-

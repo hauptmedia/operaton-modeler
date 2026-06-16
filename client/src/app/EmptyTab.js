@@ -60,14 +60,14 @@ export default class EmptyTab extends PureComponent {
 
   renderPlatformColumn = () => {
 
-    const createButtons = this.getCreateButtons('Fluxnova');
+    const createButtons = this.getCreateButtons('Operaton');
 
     return (
       <div id="welcome-page-platform" className="welcome-card" data-testid="welcome-page-platform">
         <div className="engine-info">
           <div className="engine-info-heading">
             <PlatformIcon className="engine-icon platform-icon" />
-            <h3>Fluxnova</h3>
+            <h3>Operaton</h3>
           </div>
         </div>
 
@@ -85,8 +85,8 @@ export default class EmptyTab extends PureComponent {
         <div className="learn-more">
           <h3>Learn more</h3>
           <div className="article relative">
-            <p>Introduction to Fluxnova</p>
-            <a href="https://docs.fluxnova.finos.org/get-started/quick-start">Getting Started</a>
+            <p>Introduction to Operaton</p>
+            <a href="https://docs.operaton.org/get-started/quick-start">Getting Started</a>
           </div>
           <div className="article">
             <p>About Modeler 1</p>
@@ -94,7 +94,7 @@ export default class EmptyTab extends PureComponent {
           </div>
           <div className="article">
             <p>Model your first diagram</p>
-            <a href="https://docs.fluxnova.finos.org/">Fluxnova Docs</a>
+            <a href="https://docs.operaton.org/">Operaton Docs</a>
           </div>
         </div>
       </div>

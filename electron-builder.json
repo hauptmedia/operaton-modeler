@@ -1,6 +1,6 @@
 {
-  "appId": "org.finos.fluxnova.FluxnovaModeler",
-  "productName": "Fluxnova Modeler",
+  "appId": "org.operaton.operaton.OperatonModeler",
+  "productName": "Operaton Modeler",
   "files": [
     {
       "filter": [
@@ -47,28 +47,28 @@
   "fileAssociations": [
     {
       "ext": "bpmn",
-      "name": "FluxnovaModeler.BPMN",
+      "name": "OperatonModeler.BPMN",
       "description": "BPMN file",
       "role": "Editor",
       "mimeType": "application/bpmn"
     },
     {
       "ext": "dmn",
-      "name": "FluxnovaModeler.DMN",
+      "name": "OperatonModeler.DMN",
       "description": "DMN file",
       "role": "Editor",
       "mimeType": "application/dmn"
     },
     {
       "ext": "cmmn",
-      "name": "FluxnovaModeler.CMMN",
+      "name": "OperatonModeler.CMMN",
       "description": "CMMN file",
       "role": "Editor",
       "mimeType": "application/cmmn"
     },
     {
       "ext": "form",
-      "name": "FluxnovaModeler.FORM",
+      "name": "OperatonModeler.FORM",
       "description": "FORM file",
       "role": "Editor",
       "mimeType": "application/camunda-form"

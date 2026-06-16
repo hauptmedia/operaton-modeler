@@ -36,7 +36,7 @@ export default class ErrorTab extends PureComponent {
             This tab crashed due to an unexpected error.
           </p>
           <p>
-            <a href="https://github.com/finos/fluxnova-modeler/issues/new?template=BUG_REPORT.md">
+            <a href="https://github.com/operaton/operaton-modeler/issues/new?template=BUG_REPORT.md">
               Report bug
             </a>
           </p>

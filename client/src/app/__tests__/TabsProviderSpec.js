@@ -19,7 +19,7 @@ import Flags, {
   DISABLE_HTTL_HINT,
   DEFAULT_HTTL,
   DISABLE_RPA,
-  FLUXNOVA_ENGINE_VERSION
+  OPERATON_ENGINE_VERSION
 } from '../../util/Flags';
 
 import {
@@ -211,7 +211,7 @@ describe('TabsProvider', function() {
 
       const tabsProvider = new TabsProvider();
 
-      const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.FLUXNOVA);
+      const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.OPERATON);
 
       // when
       const { file: { contents } } = tabsProvider.createTab('bpmn');
@@ -226,7 +226,7 @@ describe('TabsProvider', function() {
       // given
       const tabsProvider = new TabsProvider();
 
-      const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.FLUXNOVA);
+      const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.OPERATON);
 
       // when
       const { file: { contents } } = tabsProvider.createTab('dmn');
@@ -245,7 +245,7 @@ describe('TabsProvider', function() {
 
         // given
         Flags.init({
-          [FLUXNOVA_ENGINE_VERSION]: '0.0.1'
+          [OPERATON_ENGINE_VERSION]: '0.0.1'
         });
         const tabsProvider = new TabsProvider();
 
@@ -261,7 +261,7 @@ describe('TabsProvider', function() {
 
         // given
         Flags.init({
-          [FLUXNOVA_ENGINE_VERSION]: '0.0.1'
+          [OPERATON_ENGINE_VERSION]: '0.0.1'
         });
         const tabsProvider = new TabsProvider();
 
@@ -277,7 +277,7 @@ describe('TabsProvider', function() {
 
         // given
         Flags.init({
-          [FLUXNOVA_ENGINE_VERSION]: '0.0.1'
+          [OPERATON_ENGINE_VERSION]: '0.0.1'
         });
         const tabsProvider = new TabsProvider();
 
@@ -303,7 +303,7 @@ describe('TabsProvider', function() {
           // given
           const tabsProvider = new TabsProvider();
 
-          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.FLUXNOVA);
+          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.OPERATON);
 
           // when
           const { file: { contents } } = tabsProvider.createTab('bpmn');
@@ -318,7 +318,7 @@ describe('TabsProvider', function() {
           // given
           const tabsProvider = new TabsProvider();
 
-          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.FLUXNOVA);
+          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.OPERATON);
 
           // when
           const { file: { contents } } = tabsProvider.createTab('dmn');
@@ -333,7 +333,7 @@ describe('TabsProvider', function() {
           // given
           const tabsProvider = new TabsProvider();
 
-          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.FLUXNOVA);
+          const expectedPlatformVersion = getLatestStablePlatformVersion(ENGINES.OPERATON);
 
           // when
           const { file: { contents } } = tabsProvider.createTab('form');

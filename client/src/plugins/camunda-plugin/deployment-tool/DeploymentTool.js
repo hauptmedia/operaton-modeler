@@ -209,7 +209,7 @@ export default class DeploymentTool extends PureComponent {
         targetType: SELF_HOSTED,
         deployedTo: {
           executionPlatformVersion: version,
-          executionPlatform: ENGINES.FLUXNOVA
+          executionPlatform: ENGINES.OPERATON
         },
         context: 'deploymentTool'
       }
@@ -266,7 +266,7 @@ export default class DeploymentTool extends PureComponent {
 
     // If we retrieved the executionPlatformVersion, include it in event
     const deployedTo = (version &&
-      { executionPlatformVersion: version, executionPlatform: ENGINES.FLUXNOVA }) || undefined;
+      { executionPlatformVersion: version, executionPlatform: ENGINES.OPERATON }) || undefined;
 
     // notify interested parties
     triggerAction('emit-event', {

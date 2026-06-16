@@ -1,7 +1,7 @@
 {
-  "name": "fluxnova-modeler-client",
+  "name": "operaton-modeler-client",
   "version": "1.2.0",
-  "description": "Fluxnova Modeler client application",
+  "description": "Operaton Modeler client application",
   "private": true,
   "license": "MIT",
   "main": "src/index.js",

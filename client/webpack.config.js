@@ -20,7 +20,7 @@ const MIXPANEL_STAGE = process.env.MIXPANEL_STAGE || null;
 const DEV = NODE_ENV === 'development';
 const LICENSE_CHECK = process.env.LICENSE_CHECK;
 
-const UPDATES_SERVER_PRODUCT_NAME = process.env.UPDATES_SERVER_PRODUCT_NAME || 'Fluxnova Modeler';
+const UPDATES_SERVER_PRODUCT_NAME = process.env.UPDATES_SERVER_PRODUCT_NAME || 'Operaton Modeler';
 
 const getVersion = require('../app/util/get-version');
 
@@ -193,7 +193,7 @@ function extractDependencies() {
 
         // TODO(@philippfromme): workaround for https://github.com/camunda/camunda-modeler/issues/3249
         // cf. https://github.com/xz64/license-webpack-plugin/issues/124
-        return packageName === 'fluxnova-modeler-client';
+        return packageName === 'operaton-modeler-client';
       },
       renderLicenses: (modules) => {
         return JSON.stringify(modules, null, 2);

@@ -68,8 +68,8 @@ import EngineProfileHelper from '../EngineProfileHelper';
 
 import { ENGINES } from '../../../util/Engines';
 import {
-  convertDmnToFluxnovaIfRequired
-} from '../util/fluxnovaConversion';
+  convertDmnToOperatonIfRequired
+} from '../util/operatonConversion';
 
 const EXPORT_AS = [ 'png', 'jpeg', 'svg' ];
 
@@ -79,7 +79,7 @@ const NAMESPACE_URL_DMN11 = 'http://www.omg.org/spec/DMN/20151101/dmn.xsd',
 const CONFIG_KEY = 'editor.askDmnMigration';
 
 export const DEFAULT_ENGINE_PROFILE = {
-  executionPlatform: ENGINES.FLUXNOVA,
+  executionPlatform: ENGINES.OPERATON,
   executionPlatformVersion: undefined
 };
 
@@ -574,7 +574,7 @@ export class DmnEditor extends CachedComponent {
       return;
     }
 
-    importedXML = await convertDmnToFluxnovaIfRequired(importedXML, onAction, onContentUpdated);
+    importedXML = await convertDmnToOperatonIfRequired(importedXML, onAction, onContentUpdated);
 
     return modeler.importXML(importedXML).then(
       this.ifMounted(({ warnings }) => this.handleImport(null, warnings)),
@@ -1060,7 +1060,7 @@ function getMigrationDialog() {
     defaultId: 1,
     message: 'Would you like to migrate your diagram to DMN 1.3?',
     detail: [
-      'Only DMN 1.3 diagrams can be opened with Fluxnova Modeler v1.0.0 or later.',
+      'Only DMN 1.3 diagrams can be opened with Operaton Modeler v1.0.0 or later.',
     ].join('\n'),
     checkboxChecked: true,
     checkboxLabel: 'Do not ask again.'

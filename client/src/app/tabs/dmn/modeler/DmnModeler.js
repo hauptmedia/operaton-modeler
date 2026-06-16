@@ -26,7 +26,7 @@ import openDrgElementModule from './features/overview/open-drg-element';
 import overviewRendererModule from './features/overview/overview-renderer';
 
 import executionPlatformModule from '@camunda/execution-platform';
-import modelerModdle from '../../../../moddle/fluxnova-dmn-modeler-moddle.json';
+import modelerModdle from '../../../../moddle/operaton-dmn-modeler-moddle.json';
 
 import { DmnImprovedCanvasModule } from '@camunda/improved-canvas';
 

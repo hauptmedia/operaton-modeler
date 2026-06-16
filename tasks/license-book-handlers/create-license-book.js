@@ -45,7 +45,7 @@ ${licenseText}
 END OF ${name} NOTICES AND INFORMATION`;
   }
 
-  return `fluxnova-modeler
+  return `operaton-modeler
 
 THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
 Do Not Translate or Localize

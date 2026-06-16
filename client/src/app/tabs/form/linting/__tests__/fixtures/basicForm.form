@@ -2,7 +2,7 @@
   "type": "default",
   "id": "formtest",
   "exporter": {
-    "name": "Fluxnova Modeler",
+    "name": "Operaton Modeler",
     "version": "5.34.0"
   },
   "components": [
@@ -39,6 +39,6 @@
       "id": "Field_1oef7xr"
     }
   ],
-  "executionPlatform": "Fluxnova Platform",
+  "executionPlatform": "Operaton",
   "executionPlatformVersion": "1.0"
 }

@@ -18,7 +18,7 @@ import {
   Parser
 } from 'saxen';
 
-const MODELER_NAMESPACE = 'http://fluxnova.finos.org/schema/modeler/1.0';
+const MODELER_NAMESPACE = 'http://operaton.org/schema/modeler/1.0';
 
 /**
  * Find execution platform details if available.

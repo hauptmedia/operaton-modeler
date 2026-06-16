@@ -59,38 +59,38 @@ const platforms = [
 const expectedFiles = {
   win: [
     {
-      name: 'fluxnova-modeler-${version}-win-${arch}.zip',
+      name: 'operaton-modeler-${version}-win-${arch}.zip',
       archs,
       contents: [
-        'Fluxnova Modeler.exe',
+        'Operaton Modeler.exe',
         'support/register_fileassoc.bat',
-        'LICENSE.fluxnova-modeler.txt',
-        'THIRD_PARTY_NOTICES.fluxnova-modeler.txt',
+        'LICENSE.operaton-modeler.txt',
+        'THIRD_PARTY_NOTICES.operaton-modeler.txt',
         'VERSION'
       ]
     }
   ],
   linux: [
     {
-      name: 'fluxnova-modeler-${version}-linux-${arch}.tar.gz',
+      name: 'operaton-modeler-${version}-linux-${arch}.tar.gz',
       archs: [ 'x64' ],
       contents: [
-        'fluxnova-modeler-${version}-linux-${arch}/fluxnova-modeler',
-        'fluxnova-modeler-${version}-linux-${arch}/support/xdg_register.sh',
-        'fluxnova-modeler-${version}-linux-${arch}/VERSION'
+        'operaton-modeler-${version}-linux-${arch}/operaton-modeler',
+        'operaton-modeler-${version}-linux-${arch}/support/xdg_register.sh',
+        'operaton-modeler-${version}-linux-${arch}/VERSION'
       ]
     }
   ],
   mac: [
     {
-      name: 'fluxnova-modeler-${version}-mac-${arch}.dmg',
+      name: 'operaton-modeler-${version}-mac-${arch}.dmg',
       archs: [ 'x64', 'arm64' ]
     },
     {
-      name: 'fluxnova-modeler-${version}-mac-${arch}.zip',
+      name: 'operaton-modeler-${version}-mac-${arch}.zip',
       archs: [ 'x64', 'arm64' ],
       contents: [
-        'Fluxnova Modeler.app/Contents/Info.plist'
+        'Operaton Modeler.app/Contents/Info.plist'
       ]
     }
   ]

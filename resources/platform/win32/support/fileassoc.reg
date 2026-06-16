@@ -3,73 +3,73 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes]
 
 [HKEY_CURRENT_USER\Software\Classes\.bpmn]
-@="FluxnovaModeler.BPMN"
+@="OperatonModeler.BPMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.cmmn]
-@="FluxnovaModeler.CMMN"
+@="OperatonModeler.CMMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.dmn]
-@="FluxnovaModeler.DMN"
+@="OperatonModeler.DMN"
 
 [HKEY_CURRENT_USER\Software\Classes\.form]
-@="FluxnovaModeler.FORM"
+@="OperatonModeler.FORM"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.BPMN]
 @="BPMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.BPMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.BPMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell\open]
-@="Open with Fluxnova Modeler"
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.BPMN\shell\open]
+@="Open with Operaton Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.BPMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.BPMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.CMMN]
 @="CMMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.CMMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.CMMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell\open]
-@="Open with Fluxnova Modeler"
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.CMMN\shell\open]
+@="Open with Operaton Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.CMMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.CMMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.DMN]
 @="DMN file"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.DMN\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.DMN\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell\open]
-@="Open with Fluxnova Modeler"
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.DMN\shell\open]
+@="Open with Operaton Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.DMN\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.DMN\shell\open\command]
 @="__CWD__ \"%1\""
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.FORM]
 @="FORM file"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\DefaultIcon]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.FORM\DefaultIcon]
 @="__CWD__,0"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.FORM\shell]
 @="open"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell\open]
-@="Open with Fluxnova Modeler"
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.FORM\shell\open]
+@="Open with Operaton Modeler"
 
-[HKEY_CURRENT_USER\Software\Classes\FluxnovaModeler.FORM\shell\open\command]
+[HKEY_CURRENT_USER\Software\Classes\OperatonModeler.FORM\shell\open\command]
 @="__CWD__ \"%1\""

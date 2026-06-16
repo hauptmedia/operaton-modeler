@@ -7,7 +7,7 @@ export function createBpmnFormGroup(element) {
 
   const group = {
     label: translate('Forms'),
-    id: 'FluxnovaPlatform__Form',
+    id: 'Operaton__Form',
     component: Group,
     entries: [
       ...FormProps({ element })

@@ -18,7 +18,7 @@ const DmnTab = createTab('DmnTab', [
   {
     type: 'dmn',
     editor: DmnEditor,
-    defaultName: 'Diagram (Fluxnova Platform)'
+    defaultName: 'Diagram (Operaton)'
   },
   {
     type: 'xml',

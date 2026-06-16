@@ -54,7 +54,7 @@ import {
 
 import renderEditorHelper from '../../../__tests__/helpers/renderEditor';
 
-import existingFluxnovaXML from './existing.fluxnova.dmn';
+import existingOperatonXML from './existing.operaton.dmn';
 import existingC7XML from './existing.c7.dmn';
 import existingC8XML from '../../__tests__/EngineProfile.cloud.dmn';
 import { ENGINES, getLatestStable } from '../../../../util/Engines';
@@ -2132,7 +2132,7 @@ describe('<DmnEditor>', function() {
 
   });
 
-  describe('fluxnova conversion', function() {
+  describe('operaton conversion', function() {
 
     let onAction;
 
@@ -2146,11 +2146,11 @@ describe('<DmnEditor>', function() {
 
     describe('should convert', function() {
 
-      it('existing model to fluxnova', async function() {
+      it('existing model to operaton', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
-        const latestStable = getLatestStable(ENGINES.FLUXNOVA);
+        const latestStable = getLatestStable(ENGINES.OPERATON);
 
         // when
         await renderEditor(existingC7XML, {
@@ -2162,8 +2162,8 @@ describe('<DmnEditor>', function() {
         // then
         expect(onContentUpdated).to.be.calledOnce;
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('namespace="http://fluxnova.finos.org/schema/1.0/dmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
+        expect(convertedXML).to.contain('namespace="http://operaton.org/schema/1.0/dmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Operaton"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(convertedXML).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
@@ -2175,13 +2175,13 @@ describe('<DmnEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already fluxnova', async function() {
+      it('when model is already operaton', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
 
         // when
-        await renderEditor(existingFluxnovaXML, {
+        await renderEditor(existingOperatonXML, {
           onAction: onAction,
           onContentUpdated: onContentUpdated
         });
@@ -2252,36 +2252,36 @@ describe('<DmnEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (with namespace)', expectEngineProfile(namespaceEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: undefined
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0.0)', expectEngineProfile(engineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0.0)', expectEngineProfile(engineProfileXML, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.1'
     }));
 
 
-    it('should open unknown engine profile as Fluxnova', async function() {
+    it('should open unknown engine profile as Operaton', async function() {
 
       // given
       const onImportSpy = spy();
@@ -2293,7 +2293,7 @@ describe('<DmnEditor>', function() {
       expect(onImportSpy).to.have.been.calledOnce;
 
       expect(instance.getCached().engineProfile).to.eql({
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '7.15.0'
       });
     });

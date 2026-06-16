@@ -1,6 +1,6 @@
 {
   "name": "Modeler",
-  "uri": "http://fluxnova.finos.org/schema/modeler/1.0",
+  "uri": "http://operaton.org/schema/modeler/1.0",
   "prefix": "modeler",
   "xml": {
     "tagAlias": "lowerCase"
@@ -11,7 +11,7 @@
       "name": "Definitions",
       "isAbstract": true,
       "extends": [
-        "dmn:Definitions"
+        "bpmn:Definitions"
       ],
       "properties": [
         {

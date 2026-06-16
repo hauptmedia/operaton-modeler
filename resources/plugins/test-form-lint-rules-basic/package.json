@@ -1,7 +1,7 @@
 {
   "name": "test-form-lint-rules-basic",
   "version": "0.0.0",
-  "description": "Fluxnova Modeler lint rules plug-in for forms",
+  "description": "Operaton Modeler lint rules plug-in for forms",
   "main": "index.js",
   "scripts": {
     "all": "webpack",

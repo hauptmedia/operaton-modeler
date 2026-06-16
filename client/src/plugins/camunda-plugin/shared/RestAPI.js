@@ -116,12 +116,12 @@ export const GenericApiErrors = {
 
 export const GenericApiErrorMessages = {
   [ NO_INTERNET_CONNECTION ]: 'Could not establish a network connection.',
-  [ CONNECTION_FAILED ]: 'Should point to a running Fluxnova REST API.',
+  [ CONNECTION_FAILED ]: 'Should point to a running Operaton REST API.',
   [ UNAUTHORIZED ]: 'Credentials do not match with the server.',
   [ FORBIDDEN ]: 'This user is not permitted to deploy. Please use different credentials or get this user enabled to deploy.',
-  [ NOT_FOUND ]: 'Should point to a running Fluxnova REST API.',
-  [ INTERNAL_SERVER_ERROR ]: 'Fluxnova is reporting an error. Please check the server status.',
-  [ UNAVAILABLE_ERROR ]: 'Fluxnova is reporting an error. Please check the server status.'
+  [ NOT_FOUND ]: 'Should point to a running Operaton REST API.',
+  [ INTERNAL_SERVER_ERROR ]: 'Operaton is reporting an error. Please check the server status.',
+  [ UNAVAILABLE_ERROR ]: 'Operaton is reporting an error. Please check the server status.'
 };
 
 export class ConnectionError extends Error {

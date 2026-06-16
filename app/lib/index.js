@@ -62,14 +62,14 @@ const clientLog = Log('client');
 bootstrapLogging();
 bootstrapEPIPESuppression();
 
-const name = app.name = 'Fluxnova Modeler';
+const name = app.name = 'Operaton Modeler';
 const version = app.version = require('../package').version;
 const MINIMUM_SIZE = {
   width: 780,
   height: 580
 };
 
-var DEFAULT_USER_PATH = path.join(app.getPath('appData'), 'fluxnova-modeler');
+var DEFAULT_USER_PATH = path.join(app.getPath('appData'), 'operaton-modeler');
 
 bootstrapLog.info(`starting ${ name } v${ version }`);
 

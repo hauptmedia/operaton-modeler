@@ -1,13 +1,13 @@
 /* global sinon */
 
 import {
-  convertBpmnToFluxnovaIfRequired,
-  convertDmnToFluxnovaIfRequired, convertFormToFluxnovaIfRequired,
-} from '../fluxnovaConversion';
+  convertBpmnToOperatonIfRequired,
+  convertDmnToOperatonIfRequired, convertFormToOperatonIfRequired,
+} from '../operatonConversion';
 import { spy } from 'sinon';
 import { ENGINES, getLatestStable } from '../../../../util/Engines';
 
-describe('tabs/bpmn/util - fluxnovaConversion', function() {
+describe('tabs/bpmn/util - operatonConversion', function() {
 
   const camundaNsBpmn = `
     <?xml version="1.0" encoding="UTF-8"?>
@@ -41,9 +41,9 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
     </bpmn:definitions>
   `;
 
-  const fluxnovaBpmn = `
+  const operatonBpmn = `
     <?xml version="1.0" encoding="UTF-8"?>
-    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Fluxnova Modeler" exporterVersion="5.33.0-dev" xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0" modeler:executionPlatform="Fluxnova Platform" modeler:executionPlatformVersion="1.0.0">
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:operaton="http://operaton.org/schema/1.0/bpmn" id="Definitions_1ug79wa" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Operaton Modeler" exporterVersion="5.33.0-dev" xmlns:modeler="http://operaton.org/schema/modeler/1.0" modeler:executionPlatform="Operaton" modeler:executionPlatformVersion="1.0.0">
         <bpmn:process id="Process_10ga7ii" isExecutable="true" >
         <bpmn:startEvent id="StartEvent_1" />
         </bpmn:process>
@@ -104,19 +104,19 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
     executionPlatformVersion: '1.0.0'
   };
 
-  const fluxnovaForm = {
+  const operatonForm = {
     type: 'default',
     id: 'Form_0lvnpjd',
     exporter: {
-      name: 'Fluxnova Modeler',
+      name: 'Operaton Modeler',
       version: '5.33.0-dev'
     },
     components: [],
-    executionPlatform: 'Fluxnova Platform',
+    executionPlatform: 'Operaton',
     executionPlatformVersion: '1.0.0'
   };
 
-  describe('convertBpmnToFluxnovaIfRequired', function() {
+  describe('convertBpmnToOperatonIfRequired', function() {
 
     let onAction;
     let onContentChanged;
@@ -130,17 +130,17 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
     describe('should convert', function() {
 
-      const latestStable = getLatestStable(ENGINES.FLUXNOVA);
+      const latestStable = getLatestStable(ENGINES.OPERATON);
 
-      it('non fluxnova bpmn', async function() {
+      it('non operaton bpmn', async function() {
 
-        const conversion = await convertBpmnToFluxnovaIfRequired(camundaNsBpmn, onAction, onContentChanged);
+        const conversion = await convertBpmnToOperatonIfRequired(camundaNsBpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
-        expect(conversion).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
-        expect(conversion).to.contain('modeler:executionPlatform="Fluxnova Platform"');
+        expect(conversion).to.contain('xmlns:modeler="http://operaton.org/schema/modeler/1.0"');
+        expect(conversion).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/bpmn"');
+        expect(conversion).to.contain('modeler:executionPlatform="Operaton"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(conversion).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
@@ -151,14 +151,14 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
       });
 
-      it('non fluxnova dmn', async function() {
+      it('non operaton dmn', async function() {
 
-        const conversion = await convertDmnToFluxnovaIfRequired(camundaDmn, onAction, onContentChanged);
+        const conversion = await convertDmnToOperatonIfRequired(camundaDmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion).to.contain('namespace="http://fluxnova.finos.org/schema/1.0/dmn"');
-        expect(conversion).to.contain('modeler:executionPlatform="Fluxnova Platform"');
+        expect(conversion).to.contain('namespace="http://operaton.org/schema/1.0/dmn"');
+        expect(conversion).to.contain('modeler:executionPlatform="Operaton"');
         expect(conversion).to.contain(`modeler:executionPlatformVersion="${latestStable}"`);
 
         expect(conversion).not.to.contain('namespace="http://camunda.org/schema/1.0/dmn"');
@@ -169,13 +169,13 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
       });
 
-      it('non fluxnova form', async function() {
+      it('non operaton form', async function() {
 
-        const conversion = await convertFormToFluxnovaIfRequired(camundaForm, onAction);
+        const conversion = await convertFormToOperatonIfRequired(camundaForm, onAction);
 
         expect(onAction).to.have.been.calledWith('show-dialog');
 
-        expect(conversion.executionPlatform).to.be.eql('Fluxnova Platform');
+        expect(conversion.executionPlatform).to.be.eql('Operaton');
         expect(conversion.executionPlatformVersion).to.be.eql(latestStable);
 
         expect(onAction).not.to.have.been.calledWith('close-tab');
@@ -195,7 +195,7 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
           button: '1'
         });
 
-        await convertBpmnToFluxnovaIfRequired(camundaNsBpmn, onAction, onContentChanged);
+        await convertBpmnToOperatonIfRequired(camundaNsBpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('close-tab');
         expect(onContentChanged).not.to.have.been.called;
@@ -210,7 +210,7 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
           button: '2'
         });
 
-        await convertBpmnToFluxnovaIfRequired(camunda8Bpmn, onAction, onContentChanged);
+        await convertBpmnToOperatonIfRequired(camunda8Bpmn, onAction, onContentChanged);
 
         expect(onAction).to.have.been.calledWith('close-tab');
         expect(onContentChanged).not.to.have.been.called;
@@ -223,16 +223,16 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
           button: '2'
         });
 
-        await convertFormToFluxnovaIfRequired(camunda8Form, onAction);
+        await convertFormToOperatonIfRequired(camunda8Form, onAction);
 
         expect(onAction).to.have.been.calledWith('close-tab');
       });
 
-      it('when xml contains both fluxnova ns and exe platform', async function() {
+      it('when xml contains both operaton ns and exe platform', async function() {
 
         let onContentChanged = spy();
 
-        await convertBpmnToFluxnovaIfRequired(fluxnovaBpmn, onAction, onContentChanged);
+        await convertBpmnToOperatonIfRequired(operatonBpmn, onAction, onContentChanged);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
         expect(onContentChanged).not.to.have.been.called;
@@ -243,16 +243,16 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
         let onContentChanged = spy();
 
-        await convertBpmnToFluxnovaIfRequired('some-entity', onAction, onContentChanged);
+        await convertBpmnToOperatonIfRequired('some-entity', onAction, onContentChanged);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
         expect(onContentChanged).not.to.have.been.called;
 
       });
 
-      it('when json contains both fluxnova ns and exe platform', async function() {
+      it('when json contains both operaton ns and exe platform', async function() {
 
-        await convertFormToFluxnovaIfRequired(fluxnovaForm, onAction);
+        await convertFormToOperatonIfRequired(operatonForm, onAction);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
 
@@ -260,7 +260,7 @@ describe('tabs/bpmn/util - fluxnovaConversion', function() {
 
       it('when json entity invalid', async function() {
 
-        await convertFormToFluxnovaIfRequired('some-entity', onAction);
+        await convertFormToOperatonIfRequired('some-entity', onAction);
 
         expect(onAction).not.to.have.been.calledWith('show-dialog');
       });

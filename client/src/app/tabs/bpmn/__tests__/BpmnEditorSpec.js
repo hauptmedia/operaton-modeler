@@ -31,7 +31,7 @@ import diagramXML from './diagram.bpmn';
 import existingVanillaXML from './existing.vanilla.bpmn';
 import existingC7XML from './existing.c7.bpmn';
 import existingC8XML from './existing.c8.bpmn';
-import existingFluxnovaModel from './existing.fluxnova.bpmn';
+import existingOperatonModel from './existing.operaton.bpmn';
 import engineProfileXML from '../../__tests__/EngineProfile.platform.bpmn';
 import noEngineProfileXML from '../../__tests__/EngineProfile.vanilla.bpmn';
 import unknownEngineProfileXML from '../../__tests__/EngineProfile.unknown.bpmn';
@@ -837,13 +837,13 @@ describe('<BpmnEditor>', function() {
   });
 
 
-  describe('fluxnova conversion', function() {
+  describe('operaton conversion', function() {
 
     describe('should convert', function() {
 
-      const latestStable = getLatestStable(ENGINES.FLUXNOVA);
+      const latestStable = getLatestStable(ENGINES.OPERATON);
 
-      it('existing model to fluxnova', async function() {
+      it('existing model to operaton', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
@@ -857,9 +857,9 @@ describe('<BpmnEditor>', function() {
         expect(onContentUpdated).to.be.calledOnce;
 
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
-        expect(convertedXML).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
+        expect(convertedXML).to.contain('xmlns:modeler="http://operaton.org/schema/modeler/1.0"');
+        expect(convertedXML).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/bpmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Operaton"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}`);
 
         expect(convertedXML).not.to.contain('xmlns:modeler="http://camunda.org/schema/modeler/1.0"');
@@ -867,7 +867,7 @@ describe('<BpmnEditor>', function() {
 
       });
 
-      it('existing model that uses camunda extended attributes to fluxnova', async function() {
+      it('existing model that uses camunda extended attributes to operaton', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
@@ -880,9 +880,9 @@ describe('<BpmnEditor>', function() {
         // then
         expect(onContentUpdated).to.be.calledOnce;
         const convertedXML = onContentUpdated.getCall(0).args[0];
-        expect(convertedXML).to.contain('xmlns:modeler="http://fluxnova.finos.org/schema/modeler/1.0"');
-        expect(convertedXML).to.contain('xmlns:fluxnova="http://fluxnova.finos.org/schema/1.0/bpmn"');
-        expect(convertedXML).to.contain('modeler:executionPlatform="Fluxnova Platform"');
+        expect(convertedXML).to.contain('xmlns:modeler="http://operaton.org/schema/modeler/1.0"');
+        expect(convertedXML).to.contain('xmlns:operaton="http://operaton.org/schema/1.0/bpmn"');
+        expect(convertedXML).to.contain('modeler:executionPlatform="Operaton"');
         expect(convertedXML).to.contain(`modeler:executionPlatformVersion="${latestStable}`);
         expect(convertedXML).to.contain('xmlns:camunda="http://camunda.org/schema/1.0/bpmn"');
 
@@ -894,13 +894,13 @@ describe('<BpmnEditor>', function() {
 
     describe('should not convert', function() {
 
-      it('when model is already fluxnova', async function() {
+      it('when model is already operaton', async function() {
 
         // given
         const onContentUpdated = sinon.spy();
 
         // when
-        await renderEditor(existingFluxnovaModel, {
+        await renderEditor(existingOperatonModel, {
           onContentUpdated
         }, onAction);
 
@@ -2004,36 +2004,36 @@ describe('<BpmnEditor>', function() {
 
 
     it('should show engine profile (no engine profile)', expectEngineProfile(noEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (with namespace)', expectEngineProfile(namespaceEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: undefined
     }));
 
 
     it('should show engine profile (Camunda 7.16.0)', expectEngineProfile(engineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0)', expectEngineProfile(missingPatchEngineProfileXML, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.0'
     }));
 
 
-    it('should show engine profile (Fluxnova 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
-      executionPlatform: 'Fluxnova Platform',
+    it('should show engine profile (Operaton 1.0.1)', expectEngineProfile(patchEngineProfileXML, {
+      executionPlatform: 'Operaton',
       executionPlatformVersion: '1.0.1'
     }));
 
 
-    it('should open as Fluxnova Platform if unknown execution profile', async function() {
+    it('should open as Operaton if unknown execution profile', async function() {
 
       // given
       const onImportSpy = spy();
@@ -2046,7 +2046,7 @@ describe('<BpmnEditor>', function() {
       // then
       expect(onImportSpy).to.have.been.calledOnce;
       expect(instance.getCached().engineProfile).to.be.eql({
-        executionPlatform: 'Fluxnova Platform',
+        executionPlatform: 'Operaton',
         executionPlatformVersion: '7.15.0',
       });
     });

@@ -90,7 +90,7 @@ export default class Plugins {
 
     // deprecated helpers
     global.getModelerDirectory = () => {
-      throw new Error('not implemented in Fluxnova Modeler >= 1.0.0');
+      throw new Error('not implemented in Operaton Modeler >= 1.0.0');
     };
 
     global.getPluginsDirectory = () => {

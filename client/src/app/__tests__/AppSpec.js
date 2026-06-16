@@ -47,7 +47,7 @@ const noop = () => {};
 
 const sampleBpmn = `
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:fluxnova="http://fluxnova.org/schema/1.0/bpmn" id="Definitions_1abliy8" targetNamespace="http://bpmn.io/schema/bpmn" xmlns:modeler="http://fluxnova.org/schema/modeler/1.0" exporter="Fluxnova Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Fluxnova Platform" modeler:executionPlatformVersion="1.0.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:operaton="http://operaton.org/schema/1.0/bpmn" id="Definitions_1abliy8" targetNamespace="http://bpmn.io/schema/bpmn" xmlns:modeler="http://operaton.org/schema/modeler/1.0" exporter="Operaton Modeler" exporterVersion="5.33.0-dev" modeler:executionPlatform="Operaton" modeler:executionPlatformVersion="1.0.0">
   <bpmn:process id="Process_1fzcalt" isExecutable="true" >
     <bpmn:startEvent id="StartEvent_1" />
   </bpmn:process>
@@ -3146,7 +3146,7 @@ describe('<App>', function() {
 
       const files = [
         '/dev/null/',
-        './FluxnovaModeler',
+        './OperatonModeler',
         './diagram.bpmn'
       ];
 
